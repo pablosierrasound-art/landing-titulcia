@@ -757,6 +757,12 @@ z-index:4!important;
 .hero-social-links a:focus-visible{outline:2px solid var(--color-accent,#d83a28);outline-offset:3px}
 .hero-social-links svg{width:22px;height:22px}
 @media(min-width:768px){.hero-social-links{top:9px}}
+@media(max-width:767px){.hero-social-links{top:clamp(48px,12vw,62px)}}
+@keyframes heroSocialReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero-social-links a{opacity:0;animation:heroSocialReveal .7s ease-out .5s both}
+.hero-social-links a:nth-child(2){animation-delay:.65s}
+@media(prefers-reduced-motion:reduce){.hero-social-links a{animation:none;opacity:1}}
+
 </style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
