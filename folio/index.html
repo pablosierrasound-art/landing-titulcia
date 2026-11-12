@@ -759,10 +759,13 @@ z-index:4!important;
 @media(min-width:768px){.hero-social-links{top:9px}}
 @media(max-width:767px){
 /* Los enlaces ocupan espacio real entre el título y la línea: sin solapamientos */
-.hero-social-links{position:static;top:auto;height:38px;margin-top:12px;margin-bottom:0;z-index:2}
-.hero-social-links a{width:38px;height:38px}
-.hero-social-links svg{width:19px;height:19px}
+.hero-social-links{position:static;top:auto;height:34px;margin-top:9px;margin-bottom:0;z-index:2}
+.hero-social-links a{width:34px;height:34px}
+.hero-social-links svg{width:17px;height:17px}
 #main>section:first-child .hero-content>div:last-child{margin-top:1.35rem!important}
+/* Recuperar espacio vertical sin comprimir el texto ni desplazar el banner */
+#main>section:first-child .hero-content>div:last-child{padding-top:1.25rem!important}
+#main>section:first-child .hero-content>div:last-child .flex.flex-wrap.gap-3{gap:.55rem!important}
 }
 @keyframes heroSocialReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .hero-social-links a{opacity:0;animation:heroSocialReveal .7s ease-out .5s both}
