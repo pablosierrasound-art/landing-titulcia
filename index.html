@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-event-until="2026-11-19" data-allegations-until="2026-11-25">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,10 +27,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..800&display=swap">
   <link rel="stylesheet" href="/folio/assets/css/style.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <script src="/assets/campaign-dates.js"></script>
 <style>
 /* Colores exclusivos de la home. Día es el modo predeterminado. */
-html[data-theme="light"] {--color-bg:#f7f6f2;--color-surface:#eeede7;--color-raised:#e5e4dd;--color-line:#d8d6ce;--color-ink:#171817;--color-muted:#656760;--color-accent:#d83c24;color-scheme:light}
+html:not([data-theme="dark"]) {--color-bg:#f7f6f2;--color-surface:#eeede7;--color-raised:#e5e4dd;--color-line:#d8d6ce;--color-ink:#171817;--color-muted:#656760;--color-accent:#bb301e;color-scheme:light}
 html[data-theme="dark"] {--color-bg:#0b0b0c;--color-surface:#141416;--color-raised:#1c1c1f;--color-line:#27272b;--color-ink:#f3f0e9;--color-muted:#a29e96;--color-accent:#ff5b2e;color-scheme:dark}
 html,body,.site-header,.mobile-menu {transition:background-color .35s ease,color .35s ease,border-color .35s ease}
 .theme-switch {display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-width:44px;min-height:44px;padding:.45rem .75rem;border:1px solid var(--color-line);border-radius:999px;color:var(--color-ink);background:var(--color-surface);cursor:pointer;font-size:.85rem;font-weight:600}
@@ -486,27 +486,7 @@ html[data-theme="dark"] .hero-collage-image{background-image:url("/folio/assets/
   letter-spacing:-.045em!important;
   text-transform:none!important;
 }
-</style><style>.info-explainer-copy h3 .section-serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.04em}</style><style>
-/* Cinta editorial de convocatoria: ancho completo, animación sutil */
-.event-marquee{width:100%;background:#d83a28;color:#fff;overflow:hidden}
-.event-marquee-link{display:block;color:inherit;text-decoration:none;overflow:hidden}
-.event-marquee-top,.event-marquee-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem max(1.5rem,calc((100vw - 1320px)/2));font-size:.73rem;font-weight:700;letter-spacing:.08em}
-.event-marquee-top{border-bottom:1px solid rgba(255,255,255,.35)}
-.event-marquee-live{display:flex;align-items:center;gap:.6rem}
-.event-marquee-dot{width:.45rem;height:.45rem;border-radius:50%;background:#fff}
-.event-marquee-more{font-weight:600;letter-spacing:0;text-decoration:underline;text-underline-offset:4px}
-.event-marquee-viewport{display:block;overflow:hidden;padding:1.2rem 0 1.4rem}
-.event-marquee-track{display:flex;width:max-content;animation:eventTicker 24s linear infinite}
-.event-marquee-unit{white-space:nowrap;flex-shrink:0;font-size:clamp(2.5rem,6.8vw,6.5rem);font-weight:850;letter-spacing:-.055em;line-height:1;padding-right:2.2rem}
-.event-marquee-unit i{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;padding:0 .3em}
-.event-marquee-bottom{border-top:1px solid rgba(255,255,255,.35);font-size:.77rem;letter-spacing:0}
-.event-marquee-bottom span{font-weight:400;opacity:.9}
-.event-marquee-link:hover .event-marquee-track,.event-marquee-link:focus-visible .event-marquee-track{animation-play-state:paused}
-.event-marquee-link:focus-visible{outline:3px solid #fff;outline-offset:-5px}
-@keyframes eventTicker{to{transform:translateX(-50%)}}
-@media(max-width:767px){.event-marquee-top,.event-marquee-bottom{padding:.8rem 1.25rem}.event-marquee-viewport{padding:1.1rem 0}.event-marquee-unit{font-size:clamp(2.2rem,10vw,3.5rem)}.event-marquee-more{font-size:.65rem}.event-marquee-bottom{display:block}.event-marquee-bottom span{display:block;margin-top:.35rem}}
-@media(prefers-reduced-motion:reduce){.event-marquee-track{animation:none}.event-marquee-viewport{overflow-x:auto}}
-</style>
+</style><style>.info-explainer-copy h3 .section-serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.04em}</style>
 <style>
 /* Jerarquía de portada: titular principal más protagonista en móvil */
 @media(max-width:767px){
@@ -516,13 +496,6 @@ html[data-theme="dark"] .hero-collage-image{background-image:url("/folio/assets/
 }
 </style>
 <style>
-/* Pulso lento del indicador de próxima concentración */
-.event-marquee-dot{position:relative;flex:none;animation:concentrationPulse 2.8s ease-in-out infinite;transform-origin:center}
-.event-marquee-dot::after{content:"";position:absolute;inset:-5px;border:1px solid rgba(255,255,255,.75);border-radius:50%;animation:concentrationHalo 2.8s ease-out infinite}
-@keyframes concentrationPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.7}}
-@keyframes concentrationHalo{0%{transform:scale(.45);opacity:0}25%{opacity:.7}75%,100%{transform:scale(1.65);opacity:0}}
-@media(prefers-reduced-motion:reduce){.event-marquee-dot,.event-marquee-dot::after{animation:none}}
-</style><style>
 @media(max-width:767px){
 .hero-content h1{font-size:clamp(3rem,10.95vw,5.5rem)!important;line-height:.93!important}
 }
@@ -602,13 +575,16 @@ document.addEventListener('DOMContentLoaded',function(){
 document.addEventListener('DOMContentLoaded',function(){
  const card=document.getElementById('parque-flip');if(!card)return;
  const buttons=card.querySelectorAll('.nature-flip-button');
+ const front=card.querySelector('.nature-flip-front');
  const back=card.querySelector('.nature-flip-back');
  buttons.forEach(function(btn){btn.addEventListener('click',function(){
  const flipped=card.classList.toggle('is-flipped');
  buttons[0].setAttribute('aria-expanded',String(flipped));
- back.setAttribute('aria-hidden',String(!flipped));
- buttons[0].tabIndex=flipped?-1:0;
- buttons[1].tabIndex=flipped?0:-1;
+ const visibleSide=flipped?back:front;
+ const hiddenSide=flipped?front:back;
+ visibleSide.inert=false;
+ buttons[flipped?1:0].focus();
+ hiddenSide.inert=true;
  });});
 });
 </script><style>
@@ -622,9 +598,6 @@ document.addEventListener('DOMContentLoaded',function(){
 .info-fact-flip .nature-flip-back img{object-position:center 44%}
 @media(max-width:767px){.info-fact-flip,.nature-flip-inner{min-height:325px!important}.info-fact-flip .nature-flip-front{padding:1.1rem .6rem 4.3rem 0!important}.info-fact-flip .nature-flip-front>.info-fact-kicker,.info-fact-flip .nature-flip-front>strong,.info-fact-flip .nature-flip-front>.nature-flip-description{padding-left:.85rem!important}.info-fact-flip .nature-flip-front>.nature-flip-description{font-size:.98rem!important;line-height:1.42!important}.info-fact-flip .nature-flip-front>strong{font-size:clamp(1.45rem,5.5vw,2.2rem)!important}}
 </style><style>
-
-<style>
-<style>
 /* Cabecera editorial: posición estable, transición óptica sin saltos de layout */
 .site-header{background:var(--color-surface,#f7f6f2)!important;border-bottom:1px solid transparent!important;transition:background-color .3s ease,border-color .3s ease,box-shadow .3s ease!important}
 .site-header.is-scrolled{background:var(--color-surface,#f7f6f2)!important;border-bottom-color:rgba(110,110,110,.15)!important;box-shadow:0 5px 22px rgba(0,0,0,.045)!important}
@@ -773,7 +746,7 @@ z-index:4!important;
 .allegations-guide-note{font-size:.91rem;line-height:1.6;color:var(--color-muted);border-top:1px solid var(--color-line);padding-top:1.3rem}
 .allegations-guide-note strong{color:var(--color-ink)}
 @media(max-width:767px){.allegations-guide{margin-left:-.4rem;margin-right:-.4rem;padding:1.3rem}.allegations-steps li{grid-template-columns:2rem minmax(0,1fr);gap:.7rem}.allegations-guide-actions .btn{width:100%;justify-content:center;text-align:center}}
-.event-marquee[hidden],.hero-deadline-sticker[hidden]{display:none!important}
+.hero-deadline-sticker[hidden]{display:none!important}
 </style><style>
 /* Mejorar la presencia visual de la fotografía en la tarjeta giratoria */
 .nature-flip-back img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 46%!important;filter:none!important;opacity:1!important}
@@ -1045,7 +1018,6 @@ z-index:4!important;
    width:auto!important;min-height:3.35rem!important;
    padding:.85rem 1.35rem!important;
  }
- .event-marquee{position:relative!important;bottom:auto!important;box-shadow:none!important}
 }
 </style>
 <style>
@@ -1083,15 +1055,7 @@ z-index:4!important;
  #main>section:first-child .hero-content > .mt-14 > div .btn{
    min-height:3rem!important;padding:.7rem 1.25rem!important;font-size:.95rem!important;
  }
- .event-marquee,.event-marquee.is-after-hero{
-   position:relative!important;inset:auto!important;bottom:auto!important;
-   box-shadow:none!important;z-index:auto!important;
- }
- .event-marquee-top{padding:.55rem 1rem!important}
- .event-marquee-viewport{padding:.55rem 0!important}
- .event-marquee-bottom{display:none!important}
 }
-.event-marquee[data-event-enabled="false"]{display:none!important}
 </style>
 
 
@@ -1113,29 +1077,7 @@ html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alega
   .hero-main-actions .btn-primary {padding-inline:1.9rem;}
 }
 </style>
-<script>
-/* INTERRUPTOR DEL BANNER: cambia enabled a true/false y actualiza endDate al crear una convocatoria. */
-window.EVENT_BANNER_CONFIG = { enabled: true, endDate: '2026-11-19' };
-(function () {
-  var cfg = window.EVENT_BANNER_CONFIG;
-  var today = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-  var active = cfg.enabled && (!cfg.endDate || today <= cfg.endDate);
-  document.documentElement.setAttribute('data-event-active', active ? 'true' : 'false');
-})();
-</script>
-<style>
-/* Solo escritorio: sin convocatoria se elimina el espacio reservado al banner. */
-@media (min-width: 768px) {
-  html[data-event-active="false"] #main > section:first-child {
-    height: auto !important;
-    min-height: 0 !important;
-    justify-content: flex-start !important;
-    padding-top: clamp(6.25rem, 7.5vw, 7.5rem) !important;
-    padding-bottom: 3rem !important;
-  }
-}
-html[data-event-active="false"] .event-marquee { display:none!important; }
-</style>
+
 
 <style>
 /* Tarjetas informativas: retícula y jerarquía uniformes SOLO en escritorio. */
@@ -1193,179 +1135,35 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
     #main > section:first-child .hero-content > .mt-14 {margin-top:.6rem!important; padding-top:1rem!important;}
     #main > section:first-child .hero-main-actions .btn {max-width:100%; min-height:44px!important;}
     .hero-socials-links a {width:44px;height:44px;}
-    .event-marquee, .event-marquee-link, .event-marquee-viewport {max-width:100%;overflow:hidden;}
-    .event-marquee-track {will-change:transform;}
     .info-story .info-facts, .info-story .info-fact {min-width:0;}
   }
 }
 </style>
 
-<style>
-/* Refinamiento editorial de portada en escritorio: ritmo vertical y balance visual. */
-@media (min-width: 1101px) {
-  #main > section:first-child .hero-content h1 {margin-top:1.35rem!important;}
-  #main > section:first-child .hero-content > .hero-socials {margin-top:1.15rem!important;}
-  #main > section:first-child .hero-content > .mt-14 {
-    margin-top:clamp(1.45rem,2.4vw,2.3rem)!important;
-    padding-top:clamp(1.2rem,1.8vw,1.65rem)!important;
-    align-items:center!important;
-  }
-  #main > section:first-child .hero-content > .mt-14 > p {line-height:1.6!important;}
-  #main > section:first-child .hero-main-actions {align-self:center!important;}
-  #main > section:first-child .hero-main-actions .btn {min-height:3.65rem!important;}
-  html[data-event-active="false"] #main > section:first-child {
-    padding-top:clamp(6.25rem,7vw,7rem)!important;
-    padding-bottom:clamp(2rem,3.2vw,3rem)!important;
-  }
-}
-</style>
 
-
-
-
-
-
-
-<style>
-/* SISTEMA DE PORTADA Y EVENTO — único bloque de reglas de estado.
-   El banner permanece en el flujo; el hero reserva su altura sin superposiciones. */
-@media (min-width: 768px) {
- html[data-event-active="true"] #main > section:first-child {
-   box-sizing:border-box!important;
-   height:auto!important;
-   min-height:calc(100svh - 140px)!important;
-   display:flex!important;
-   flex-direction:column!important;
-   justify-content:center!important;
-   padding-top:clamp(5.5rem,8vh,7rem)!important;
-   padding-bottom:clamp(1rem,2vh,1.5rem)!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content {width:100%;isolation:isolate;}
- html[data-event-active="true"] #main > section:first-child .hero-content h1 {
-   font-size:clamp(3.4rem,min(6.4vw,11vh),7rem)!important;
-   line-height:.94!important;
-   margin-top:clamp(.75rem,1.5vh,1.25rem)!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .hero-socials {
-   margin-top:clamp(.6rem,1.4vh,1rem)!important;
- }
- /* La ilustración termina ANTES del pie de texto y botones. */
- html[data-event-active="true"] #main > section:first-child .hero-collage-image {
-   top:clamp(5.5rem,8vh,7rem)!important;
-   bottom:clamp(8.75rem,17vh,11rem)!important;
-   height:auto!important;
-   width:min(67vw,1000px)!important;
-   right:0!important;
-   background-size:contain!important;
-   background-position:right center!important;
- }
- /* Franja de información independiente de la imagen, sin trucos de z-index. */
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
-   display:grid!important;
-   grid-template-columns:minmax(0,7fr) minmax(0,5fr)!important;
-   align-items:center!important;
-   gap:clamp(1rem,3vw,3rem)!important;
-   margin-top:clamp(1rem,2.5vh,1.65rem)!important;
-   padding:clamp(1rem,2vh,1.4rem) 0 0!important;
-   position:relative!important;
-   background:var(--color-bg)!important;
-   isolation:isolate!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14::before {
-   content:'';position:absolute;inset:-.1rem -2rem -2rem;
-   background:var(--color-bg);z-index:-1;pointer-events:none;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 > p {
-   grid-column:1!important;margin:0!important;max-width:100%!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions {
-   grid-column:2!important;display:flex!important;flex-wrap:wrap!important;
-   justify-content:flex-end!important;align-items:center!important;
-   gap:.75rem!important;position:relative!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn {
-   display:inline-flex!important;opacity:1!important;visibility:visible!important;
-   flex:none!important;min-height:3.2rem!important;padding:.8rem 1.25rem!important;
-   white-space:nowrap!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
-   background:var(--color-bg)!important;color:var(--color-ink)!important;
-   border:1px solid var(--color-line)!important;
- }
- html[data-event-active="true"] .event-marquee-top,
- html[data-event-active="true"] .event-marquee-bottom {padding-top:.5rem!important;padding-bottom:.5rem!important;}
- html[data-event-active="true"] .event-marquee-viewport {padding:.4rem 0 .5rem!important;}
- html[data-event-active="true"] .event-marquee-unit {font-size:clamp(2rem,4vw,3.7rem)!important;}
-}
-@media (min-width:768px) and (max-width:1100px) {
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
-   grid-template-columns:minmax(0,1fr)!important;gap:.8rem!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions {
-   grid-column:1!important;justify-content:flex-start!important;
- }
-}
-@media (min-width:768px) and (max-height:740px) {
- html[data-event-active="true"] #main > section:first-child {
-   min-height:0!important;padding-top:5rem!important;padding-bottom:.75rem!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content h1 {
-   font-size:clamp(2.8rem,min(5.5vw,9vh),5.5rem)!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-collage-image {
-   top:5rem!important;bottom:9rem!important;
- }
-}
-@media (prefers-reduced-motion:reduce) {
- .event-marquee-track {animation:none!important;}
-}
-</style>
-
-<style>
-/* Banner en portada móvil: visible al abrir, sin quedar fijo durante la navegación.
-   Al iniciar el desplazamiento vuelve a su posición natural tras la portada. */
-@media(max-width:767px){
- html[data-event-active="true"]:not(.event-mobile-scrolled) .event-marquee[data-event-enabled="true"]{
-   display:block!important;position:fixed!important;inset:auto 0 0!important;
-   width:100%!important;z-index:70!important;box-shadow:0 -8px 28px rgba(0,0,0,.12)!important;
- }
- html[data-event-active="true"] .event-marquee-top{padding:.45rem 1rem!important;font-size:.62rem!important;gap:.5rem!important;}
- html[data-event-active="true"] .event-marquee-viewport{padding:.35rem 0!important;}
- html[data-event-active="true"] .event-marquee-unit{font-size:clamp(1.65rem,7vw,2.6rem)!important;}
- html[data-event-active="true"] .event-marquee-bottom{display:none!important;}
- html[data-event-active="true"]:not(.event-mobile-scrolled) #main>section:first-child{
-   padding-bottom:clamp(6rem,14vh,8rem)!important;
- }
-}
-</style>
-
-<style>
-/* Escritorio: suavizar el borde derecho del collage para que nunca acabe
-   en un corte vertical dentro del fondo de la portada. */
-@media (min-width: 768px) {
-  #main > section:first-child {
-    overflow-x: clip !important;
-  }
-  #main > section:first-child .hero-collage-image {
-    right: 0 !important;
-    max-width: 100% !important;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
-}
-</style>
+  <link rel="stylesheet" href="/assets/campaign.css">
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
-  <a href="#main" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
 
-  <header class="site-header fixed inset-x-0 top-0 z-50"><div class="container-x flex h-20 items-center justify-between gap-6"><a href="#main" class="group flex items-center gap-2 text-lg font-semibold tracking-tight"><span class="grid size-8 place-items-center rounded-full bg-ink text-bg" aria-hidden="true"><svg viewBox="0 0 32 32" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 25V13l7 4v-5l7 5V9h7v16H5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21h2m4 0h2m4 0h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 27 27 5" stroke="#ef4444" stroke-width="3.8" stroke-linecap="round"/></svg></span><span class="header-dynamic-title" aria-label="No a la incineradora en Titulcia"><span class="header-title-line"><span class="header-no">NO</span> A LA INCINERADORA</span><span class="header-location">EN TITULCIA</span></span></a><nav aria-label="Navegación" class="hidden md:block"><ul class="flex items-center gap-10 text-[0.95rem]"><li><a href="#informacion" class="nav-link">Información</a></li><li><a href="#impacto" class="nav-link">Qué nos preocupa</a></li><li><a href="#participa" class="nav-link nav-link-participa">Participa</a></li></ul></nav><button type="button" class="theme-switch" data-theme-toggle aria-label="Cambiar a modo noche" title="Cambiar modo de color"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><span data-theme-label>Noche</span></button><a href="#participa" class="btn btn-primary hidden md:inline-flex">Presenta alegaciones &rarr;</a><button type="button" class="menu-toggle -mr-2 flex size-11 flex-col items-center justify-center gap-[6px] md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span></button></div><div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-20 bottom-0 overflow-y-auto bg-bg md:hidden" hidden><nav aria-label="Menú móvil" class="container-x pt-6 pb-10"><ul><li><a href="#main" class="flex border-b border-line py-5 text-3xl">Inicio</a></li><li><a href="#informacion" class="flex border-b border-line py-5 text-3xl">Información</a></li><li><a href="#impacto" class="flex border-b border-line py-5 text-3xl">Qué nos preocupa</a></li><li><a href="#participa" class="flex border-b border-line py-5 text-3xl nav-link-participa-mobile">Participa</a></li></ul></nav></div></header>
+  <header class="site-header fixed inset-x-0 top-0 z-50"><div class="container-x flex h-20 items-center justify-between gap-6"><a href="#main" aria-label="No a la incineradora en Titulcia, inicio" class="group flex items-center gap-2 text-lg font-semibold tracking-tight"><span class="grid size-8 place-items-center rounded-full bg-ink text-bg" aria-hidden="true"><svg viewBox="0 0 32 32" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 25V13l7 4v-5l7 5V9h7v16H5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21h2m4 0h2m4 0h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 27 27 5" stroke="#ef4444" stroke-width="3.8" stroke-linecap="round"/></svg></span><span class="header-dynamic-title" aria-hidden="true"><span class="header-title-line"><span class="header-no">NO</span> A LA INCINERADORA</span><span class="header-location">EN TITULCIA</span></span></a><nav aria-label="Navegación" class="hidden md:block"><ul class="flex items-center gap-10 text-[0.95rem]"><li><a href="#informacion" class="nav-link">Información</a></li><li><a href="#impacto" class="nav-link">Qué nos preocupa</a></li><li><a href="#participa" class="nav-link nav-link-participa">Participa</a></li></ul></nav><button type="button" class="theme-switch" data-theme-toggle aria-label="Cambiar a modo noche" title="Cambiar modo de color"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><span data-theme-label>Noche</span></button><a href="#participa" class="btn btn-primary hidden md:inline-flex">Presenta alegaciones &rarr;</a><button type="button" class="menu-toggle -mr-2 flex size-11 flex-col items-center justify-center gap-[6px] md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú" data-label-open="Abrir menú" data-label-close="Cerrar menú"><span></span><span></span></button></div><div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-20 bottom-0 overflow-y-auto bg-bg md:hidden" hidden><nav aria-label="Menú móvil" class="container-x pt-6 pb-10"><ul><li><a href="#main" class="flex border-b border-line py-5 text-3xl">Inicio</a></li><li><a href="#informacion" class="flex border-b border-line py-5 text-3xl">Información</a></li><li><a href="#impacto" class="flex border-b border-line py-5 text-3xl">Qué nos preocupa</a></li><li><a href="#participa" class="flex border-b border-line py-5 text-3xl nav-link-participa-mobile">Participa</a></li></ul></nav></div></header>
 
-  <main id="main">
-<section class="container-x relative isolate flex min-h-[92svh] flex-col justify-end pt-32 pb-14 md:pb-20"><div class="hero-collage hero-collage-image" aria-hidden="true"></div><div class="hero-content"><div class="flex flex-wrap items-center gap-x-6 gap-y-2 reveal"><p class="eyebrow">Movilización ciudadana · Titulcia, Madrid</p><p class="eyebrow flex items-center gap-2"><span class="status-dot"></span> Nuestro entorno, nuestro futuro</p></div><h1 class="mt-8 font-semibold leading-[0.9] tracking-[-0.055em]" style="font-size:clamp(2.75rem,8.2vw,8.6rem);font-weight:800;letter-spacing:-0.025em"><span class="reveal-line"><span><span class="text-accent">NO</span> A LA</span></span><span class="reveal-line"><span style="--d:120ms">INCINERADORA</span></span><span class="reveal-line"><span style="--d:240ms">EN TITULCIA<span class="text-accent">.</span></span></span></h1><div class="hero-socials reveal" style="--d:260ms" aria-label="Redes sociales de la plataforma"><div class="hero-socials-links"><a href="https://www.instagram.com/p.incineradora.titulcia" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la plataforma" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.7" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/1FnFJVcrhL/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de la plataforma" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.6 22v-8.8h3l.45-3.5H13.6V7.5c0-1.02.28-1.72 1.75-1.72h1.87V2.65A25 25 0 0 0 14.5 2c-2.7 0-4.55 1.65-4.55 4.7v3H6.9v3.5h3.05V22z"/></svg></a><a href="https://www.tiktok.com/@no_incineradora_titulcia" target="_blank" rel="noopener noreferrer" aria-label="TikTok de la plataforma" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.9 3.21-1.42.08-2.83-.31-4.03-1.03-1.99-1.19-3.39-3.34-3.6-5.66-.02-.5-.03-1-.01-1.49.18-1.88 1.11-3.68 2.56-4.91 1.65-1.43 3.96-2.11 6.12-1.71.02 1.48-.04 2.96-.04 4.44-.99-.32-2.16-.23-3.03.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.65 1.82 3.04 3.5 2.89 1.12-.01 2.19-.66 2.77-1.62.19-.34.4-.69.41-1.09.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.08z"/></svg></a></div></div><a class="hero-deadline-sticker" href="#participa" aria-label="Presenta tus alegaciones antes del 25 de noviembre"><span class="sticker-label">FECHA LÍMITE<br>ALEGACIONES</span><span class="sticker-message"><strong>25 NOVIEMBRE</strong><span aria-hidden="true"> ↗</span></span></a><div class="mt-14 grid gap-10 border-t border-line pt-8 md:grid-cols-12 md:items-end reveal" style="--d:300ms"><p class="text-lg leading-relaxed text-muted md:col-span-6 md:text-xl"><strong class="text-accent">PreZero</strong> quiere construir una planta de tratamiento de residuos junto a Titulcia que incluiría incineración para generar electricidad. <span class="text-ink">Nos preocupa su cercanía al pueblo y a espacios naturales protegidos. <strong>Infórmate y presenta tus alegaciones.</strong></span></p><div class="hero-main-actions flex flex-wrap gap-3 md:col-span-5 md:col-start-8 md:justify-end"><a href="#participa" class="btn btn-primary">Hazte escuchar &rarr;</a><a href="#informacion" class="btn btn-outline">Infórmate</a></div></div></section>
-<aside class="event-marquee" data-event-enabled="true" aria-label="Asamblea del grupo de Ciempozuelos, jueves 19 de noviembre de 2026 a las 18:00"><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Eloy%20Saavedra%2C%20Calle%20Timanfaya%201%2C%20Ciempozuelos%2C%20Madrid" target="_blank" rel="noopener noreferrer" class="event-marquee-link"><span class="event-marquee-top"><span class="event-marquee-live"><span class="event-marquee-dot"></span> PRÓXIMA ASAMBLEA · GRUPO CIEMPOZUELOS</span><span class="event-marquee-more">Cómo llegar · Google Maps ↗</span></span><span class="event-marquee-viewport"><span class="event-marquee-track" aria-label="Jueves 19 de noviembre de 2026, 18:00, Colegio Eloy Saavedra, Ciempozuelos"><span class="event-marquee-unit">19 NOVIEMBRE <i>·</i> 18:00 H <i>·</i> CIEMPOZUELOS <i>↗</i></span><span class="event-marquee-unit" aria-hidden="true">19 NOVIEMBRE <i>·</i> 18:00 H <i>·</i> CIEMPOZUELOS <i>↗</i></span></span></span><span class="event-marquee-bottom">Asamblea · Jueves 19 de noviembre, 18:00 h · Colegio Eloy Saavedra, C/ Timanfaya, 1 <span>Objetivo: trabajo en la localidad, calendario y suma de iniciativas</span></span></a></aside>
-<section id="informacion" class="info-story" aria-labelledby="info-title">
+  <main id="main" tabindex="-1">
+<section class="campaign-hero container-x relative isolate flex min-h-[92svh] flex-col justify-end pt-32 pb-14 md:pb-20"><div class="hero-collage hero-collage-image" aria-hidden="true"></div><div class="hero-content"><div class="flex flex-wrap items-center gap-x-6 gap-y-2 reveal"><p class="eyebrow">Movilización ciudadana · Titulcia, Madrid</p><p class="eyebrow flex items-center gap-2"><span class="status-dot"></span> Nuestro entorno, nuestro futuro</p></div><h1 class="mt-8 font-semibold leading-[0.9] tracking-[-0.055em]" style="font-size:clamp(2.75rem,8.2vw,8.6rem);font-weight:800;letter-spacing:-0.025em"><span class="reveal-line"><span><span class="text-accent">NO</span> A LA</span></span><span class="reveal-line"><span style="--d:120ms">INCINERADORA</span></span><span class="reveal-line"><span style="--d:240ms">EN TITULCIA<span class="text-accent">.</span></span></span></h1><div class="hero-socials reveal" style="--d:260ms" aria-label="Redes sociales de la plataforma"><div class="hero-socials-links"><a href="https://www.instagram.com/p.incineradora.titulcia" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la plataforma" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.7" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/1FnFJVcrhL/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de la plataforma" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.6 22v-8.8h3l.45-3.5H13.6V7.5c0-1.02.28-1.72 1.75-1.72h1.87V2.65A25 25 0 0 0 14.5 2c-2.7 0-4.55 1.65-4.55 4.7v3H6.9v3.5h3.05V22z"/></svg></a><a href="https://www.tiktok.com/@no_incineradora_titulcia" target="_blank" rel="noopener noreferrer" aria-label="TikTok de la plataforma" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.9 3.21-1.42.08-2.83-.31-4.03-1.03-1.99-1.19-3.39-3.34-3.6-5.66-.02-.5-.03-1-.01-1.49.18-1.88 1.11-3.68 2.56-4.91 1.65-1.43 3.96-2.11 6.12-1.71.02 1.48-.04 2.96-.04 4.44-.99-.32-2.16-.23-3.03.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.65 1.82 3.04 3.5 2.89 1.12-.01 2.19-.66 2.77-1.62.19-.34.4-.69.41-1.09.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.08z"/></svg></a></div></div><a class="hero-deadline-sticker" href="#participa" data-allegations-only><span class="sticker-label">FECHA LÍMITE<br>ALEGACIONES</span><span class="sticker-message"><strong>25 NOVIEMBRE</strong><span aria-hidden="true"> &rarr;</span></span></a>
+  <div class="hero-summary mt-14 grid gap-10 border-t border-line pt-8 md:grid-cols-12 md:items-end reveal" style="--d:300ms"><p class="text-lg leading-relaxed text-muted md:col-span-6 md:text-xl"><strong class="text-accent">PreZero</strong> proyecta una planta que quemaría residuos para generar electricidad, cerca de Titulcia y de espacios naturales protegidos.</p>
+    <div class="hero-main-actions flex flex-wrap gap-3 md:col-span-5 md:col-start-8 md:justify-end"><a href="#participa" class="btn btn-primary">Hazte escuchar &rarr;</a><a href="#informacion" class="btn btn-outline">Infórmate</a></div></div></section>
+<aside class="campaign-event" aria-labelledby="event-title">
+  <div class="campaign-event-inner container-x">
+    <h2 id="event-title">Asamblea en Ciempozuelos</h2>
+    <div>
+      <p><time datetime="2026-11-19T18:00:00+01:00">Jueves 19 de noviembre · 18:00 h</time></p>
+      <p>Colegio Eloy Saavedra, C/ Timanfaya, 1</p>
+      <p class="campaign-event-purpose">Trabajo en la localidad, calendario y suma de iniciativas.</p>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Eloy%20Saavedra%2C%20Calle%20Timanfaya%201%2C%20Ciempozuelos%2C%20Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</aside>
+<section tabindex="-1" id="informacion" class="info-story" aria-labelledby="info-title">
 <div class="container-x">
  <div class="info-story-heading reveal"><div><p class="eyebrow">01 / Entiende el proyecto</p><h2 id="info-title">¿Qué quieren <em>construir?</em></h2></div><p>El proyecto de PreZero combina clasificación de residuos e incineración para obtener energía. Se tramita en la carretera M-404, km 49, en Titulcia, y todavía está pendiente de autorización ambiental.</p></div>
  <div class="info-facts" aria-label="Datos principales del proyecto">
@@ -1373,8 +1171,8 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
   <article class="info-fact reveal"><div class="info-fact-art"><i data-lucide="truck" aria-hidden="true"></i><span class="info-fact-index">02 / CERCANÍA</span></div><span class="info-fact-kicker">¿Dónde la quieren construir?</span><strong>1,5 <small>km del pueblo</small></strong><span>La ubicación oficial del proyecto es la M-404, km 49, en el término municipal de Titulcia. La distancia al casco urbano es aproximada.</span></article>
   <article class="info-fact info-fact-nature info-fact-flip reveal" id="parque-flip">
 <div class="nature-flip-inner">
-<div class="nature-flip-front"><div class="info-fact-art"><i data-lucide="bird" aria-hidden="true"></i><span class="info-fact-index">03 / NATURALEZA</span></div><span class="info-fact-kicker">¿Qué espacio natural hay cerca?</span><strong>Parque del Sureste</strong><span class="nature-flip-description">El entorno del Parque Regional del Sureste alberga riberas, aves y otros hábitats valiosos. Es importante evaluar los posibles efectos del proyecto.</span><button type="button" class="nature-flip-button" aria-label="Ver fotografía del Parque Regional del Sureste" aria-expanded="false" aria-controls="parque-foto"><i data-lucide="rotate-3d" aria-hidden="true"></i><span>Ver el parque</span></button></div>
-<div class="nature-flip-back" id="parque-foto" aria-hidden="true"><img loading="lazy" src="https://www.comunidad.madrid/docs/contextual/styles/3x1_1272w_1x/public/assets/2023/11/07/bayona_97a0535__jpg/23755.jpg?h=1996f68f&amp;h=71478ac3&amp;itok=tZ3f96F_" alt="Vista del río Jarama y la vegetación de ribera en Soto Bayona, Titulcia"/><div class="nature-photo-caption"><strong>Parque Regional del Sureste</strong><span>Soto Bayona, Titulcia · Comunidad de Madrid</span></div><button type="button" class="nature-flip-button nature-flip-return" aria-label="Volver a la información sobre el parque" tabindex="-1"><i data-lucide="rotate-ccw" aria-hidden="true"></i><span>Volver</span></button></div>
+<div class="nature-flip-front"><div class="info-fact-art"><i data-lucide="bird" aria-hidden="true"></i><span class="info-fact-index">03 / NATURALEZA</span></div><span class="info-fact-kicker">¿Qué espacio natural hay cerca?</span><strong>Parque del Sureste</strong><span class="nature-flip-description">El entorno del Parque Regional del Sureste alberga riberas, aves y otros hábitats valiosos. Es importante evaluar los posibles efectos del proyecto.</span><button type="button" class="nature-flip-button" aria-expanded="false" aria-controls="parque-foto"><i data-lucide="rotate-3d" aria-hidden="true"></i><span>Ver el parque</span></button></div>
+<div class="nature-flip-back" id="parque-foto" inert><img loading="lazy" src="https://www.comunidad.madrid/docs/contextual/styles/3x1_1272w_1x/public/assets/2023/11/07/bayona_97a0535__jpg/23755.jpg?h=1996f68f&amp;h=71478ac3&amp;itok=tZ3f96F_" alt="Vista del río Jarama y la vegetación de ribera en Soto Bayona, Titulcia"/><div class="nature-photo-caption"><strong>Parque Regional del Sureste</strong><span>Soto Bayona, Titulcia · Comunidad de Madrid</span></div><button type="button" class="nature-flip-button nature-flip-return"><i data-lucide="rotate-ccw" aria-hidden="true"></i><span>Volver</span></button></div>
 </div></article>
   <article class="info-fact info-fact-status reveal"><div class="info-fact-art"><i data-lucide="circle-alert" aria-hidden="true"></i><span class="info-fact-index">04 / ACTÚA</span></div><span class="info-fact-kicker">¿Está autorizada la planta?</span><strong>Aún no aprobada</strong><span>No hay autorización ambiental definitiva. El plazo oficial de alegaciones finaliza el 25 de noviembre de 2026.</span></article>
  </div>
@@ -1393,22 +1191,22 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
  </div>
  <p class="info-sources">Fuentes: <a href="https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s" target="_blank" rel="noopener noreferrer">Expediente ambiental de la Comunidad de Madrid</a> · <a href="https://fravm.org/medio-ambiente/contaminacion-atmosferica/amplio-rechazo-ciudadano-contra-la-incineradora-de-residuos-de-titulcia/" target="_blank" rel="noopener noreferrer">FRAVM</a>. Datos y estado del procedimiento consultados en octubre de 2026.</p>
 </div></section>
-<section id="impacto" class="concerns-section" aria-labelledby="impacto-title"><div class="container-x"><div class="concerns-section-heading"><p class="eyebrow">02 / Posibles impactos</p><h2 id="impacto-title">¿Cómo puede <em class="section-serif text-accent">afectarnos?</em></h2><p>La preocupación va más allá de Titulcia. Ciempozuelos, San Martín de la Vega, Chinchón, Aranjuez y otros municipios del sureste de Madrid forman parte del entorno que merece atención. El alcance real de los posibles impactos debe determinarse mediante estudios ambientales.</p></div> <div class="info-concerns"><div class="info-questions">
+<section tabindex="-1" id="impacto" class="concerns-section" aria-labelledby="impacto-title"><div class="container-x"><div class="concerns-section-heading"><p class="eyebrow">02 / Posibles impactos</p><h2 id="impacto-title">¿Cómo puede <em class="section-serif text-accent">afectarnos?</em></h2><p>La preocupación va más allá de Titulcia. Ciempozuelos, San Martín de la Vega, Chinchón, Aranjuez y otros municipios del sureste de Madrid forman parte del entorno que merece atención. El alcance real de los posibles impactos debe determinarse mediante estudios ambientales.</p></div> <div class="info-concerns"><div class="info-questions">
   <details class="info-question reveal" open><summary><span class="info-q-icon" aria-hidden="true">≋</span><span>¿Qué pasará con el aire?</span><span class="info-q-toggle" aria-hidden="true">+</span></summary><p>La combustión produce emisiones que deben controlarse. Queremos conocer las sustancias previstas, las medidas de depuración y cómo se dispersarían según el viento y las condiciones de la zona.</p></details>
   <details class="info-question reveal"><summary><span class="info-q-icon" aria-hidden="true">⇢</span><span>¿Habrá más camiones y ruido?</span><span class="info-q-toggle" aria-hidden="true">+</span></summary><p>La actividad requeriría transporte de residuos. Deben detallarse cuántos camiones circularían, por qué carreteras y en qué horarios, especialmente en la M-404.</p></details>
   <details class="info-question reveal"><summary><span class="info-q-icon" aria-hidden="true">❀</span><span>¿Y los ríos, cultivos y animales?</span><span class="info-q-toggle" aria-hidden="true">+</span></summary><p>La proximidad al entorno del Jarama y el Tajuña hace necesario estudiar posibles efectos sobre el agua, el suelo agrícola, las aves y los espacios protegidos. No deben darse por hechos sin una evaluación específica.</p></details>
-  <details class="info-question reveal"><summary><span class="info-q-icon" aria-hidden="true">◎</span><span>¿Se puede participar todavía?</span><span class="info-q-toggle" aria-hidden="true">+</span></summary><p>Sí. El expediente 26-IPPC-00058.6/2026 está en información pública hasta el 25 de noviembre de 2026. Presentar alegaciones permite trasladar observaciones antes de la decisión ambiental.</p></details>
+  <details class="info-question reveal"><summary><span class="info-q-icon" aria-hidden="true">◎</span><span data-allegations-question>¿Se puede participar todavía?</span><span class="info-q-toggle" aria-hidden="true">+</span></summary><p data-allegations-answer>Sí. El expediente 26-IPPC-00058.6/2026 está en información pública hasta el 25 de noviembre de 2026. Presentar alegaciones permite trasladar observaciones antes de la decisión ambiental.</p></details>
  </div></div>
 
 </div></section>
-<section id="participa" class="participa-section" aria-labelledby="participa-title"><div class="container-x">
+<section tabindex="-1" id="participa" class="participa-section" aria-labelledby="participa-title"><div class="container-x">
 <div class="participa-heading reveal"><p class="eyebrow">03 / Participa</p><h2 id="participa-title">Tu voz puede <em class="section-serif text-accent">contar.</em></h2><p>El proyecto todavía no tiene autorización ambiental definitiva. Hasta el <strong>25 de noviembre de 2026</strong> puedes presentar observaciones y pedir que se estudien los posibles impactos. Aquí te explicamos cómo.</p></div>
 <div class="participa-options">
 <article class="participa-option reveal"><span class="participa-option-number">01</span><div><h3>Consulta el proyecto</h3><p>Consulta la memoria, el estudio de impacto ambiental y los planos oficiales. Expediente: <strong>26-IPPC-00058.6/2026</strong>.</p><a href="https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s" target="_blank" rel="noopener noreferrer">Ver expediente oficial <span aria-hidden="true">↗</span></a></div></article>
-<article class="participa-option participa-option-featured reveal"><span class="participa-option-number">02</span><div><span class="participa-featured-eyebrow"><span class="participa-featured-dot" aria-hidden="true"></span> TU ACCIÓN ES IMPORTANTE</span><h3>Presenta tus alegaciones</h3><p>Expón tus preocupaciones sobre el aire, los camiones, la salud o los espacios naturales. Puedes presentar observaciones por registro electrónico o por las vías presenciales admitidas.</p><div class="alegaciones-cta-group"><a href="#guia-alegaciones">Ver los pasos para alegar <span aria-hidden="true">↓</span></a><a class="alegaciones-modelos-link" href="https://drive.google.com/drive/folders/1JJwhkVk-W12nLPTteOXFsIKZ40Q3eUv1?usp=drive_link" target="_blank" rel="noopener noreferrer">Consultar modelos de alegación <span aria-hidden="true">↗</span></a></div><p class="alegaciones-modelos-aviso"><strong>Importante:</strong> Los modelos sirven como punto de partida. No copies el texto literalmente: adapta las alegaciones a tus propias preocupaciones, añade observaciones concretas y revisa el escrito antes de presentarlo. La presentación de textos idénticos no implica por sí sola su archivo automático.</p></div></article>
-<article class="participa-option reveal"><span class="participa-option-number">03</span><div><h3>Comparte la información</h3><p>Comparte información contrastada y el enlace al expediente para que otras personas puedan participar.</p><button class="participa-share" type="button" onclick="if(navigator.share){navigator.share({title:'Defendamos Titulcia',url:location.origin+location.pathname}).catch(()=>{});}else{navigator.clipboard.writeText(location.origin+location.pathname).then(()=>{this.textContent='Enlace copiado ✓'}).catch(()=>{});}">Compartir esta página <span aria-hidden="true">↗</span></button></div></article>
+<article class="participa-option participa-option-featured reveal" data-allegations-only><span class="participa-option-number">02</span><div><span class="participa-featured-eyebrow"><span class="participa-featured-dot" aria-hidden="true"></span> TU ACCIÓN ES IMPORTANTE</span><h3>Presenta tus alegaciones</h3><p>Expón tus preocupaciones sobre el aire, los camiones, la salud o los espacios naturales. Puedes presentar observaciones por registro electrónico o por las vías presenciales admitidas.</p><div class="alegaciones-cta-group"><a href="#guia-alegaciones">Ver los pasos para alegar <span aria-hidden="true">↓</span></a><a class="alegaciones-modelos-link" href="https://drive.google.com/drive/folders/1JJwhkVk-W12nLPTteOXFsIKZ40Q3eUv1?usp=drive_link" target="_blank" rel="noopener noreferrer">Consultar modelos de alegación <span aria-hidden="true">↗</span></a></div><p class="alegaciones-modelos-aviso"><strong>Importante:</strong> Los modelos sirven como punto de partida. No copies el texto literalmente: adapta las alegaciones a tus propias preocupaciones, añade observaciones concretas y revisa el escrito antes de presentarlo. La presentación de textos idénticos no implica por sí sola su archivo automático.</p></div></article>
+<article class="participa-option reveal"><span class="participa-option-number">03</span><div><h3>Comparte la información</h3><p>Comparte información contrastada y el enlace al expediente para que otras personas puedan participar.</p><button class="participa-share" type="button">Compartir esta página <span aria-hidden="true">→</span></button><p id="share-status" role="status"></p><input id="share-url" aria-label="Enlace de la campaña" readonly hidden></div></article>
 </div>
-<section id="guia-alegaciones" class="allegations-guide" aria-labelledby="guide-title">
+<section id="guia-alegaciones" data-allegations-only class="allegations-guide" aria-labelledby="guide-title">
 <div class="allegations-guide-head"><p class="eyebrow">GUÍA PRÁCTICA · EXPEDIENTE 26-IPPC-00058.6/2026</p><h3 id="guide-title">Cómo presentar tus <em class="section-serif text-accent">alegaciones.</em></h3><p>No necesitas entender todos los documentos técnicos para trasladar una preocupación concreta. El escrito debe identificar el proyecto y explicar qué quieres que se revise.</p></div>
 <ol class="allegations-steps">
 <li><span class="allegations-step-number">01</span><div><h4>Consulta la documentación</h4><p>Abre el <a href="https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s" target="_blank" rel="noopener noreferrer">expediente oficial ↗</a>. Identifica el proyecto de PreZero en Titulcia y, si puedes, revisa su estudio de impacto ambiental.</p></div></li>
@@ -1419,7 +1217,7 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
 <div class="allegations-guide-actions"><a class="btn btn-primary" href="https://sede.comunidad.madrid/prestacion-social/formulario-solicitud-generica" target="_blank" rel="noopener noreferrer">Ir al registro electrónico ↗</a><a class="btn btn-outline" href="https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s" target="_blank" rel="noopener noreferrer">Ver instrucciones oficiales ↗</a></div>
 <p class="allegations-guide-note"><strong>¿Hay que estar empadronado?</strong> La publicación oficial no establece el empadronamiento en Titulcia como requisito para presentar alegaciones. Comprueba la identificación y el canal de presentación que te corresponda. Las personas y entidades obligadas a relacionarse electrónicamente deben usar esa vía.</p>
 </section>
-<p class="participa-footnote">Información basada en el expediente oficial de la Comunidad de Madrid (26-IPPC-00058.6/2026). Comprueba el estado del trámite y sus instrucciones antes de presentar tu escrito.</p>
+<p class="participa-footnote" data-allegations-only>Información basada en el expediente oficial de la Comunidad de Madrid (26-IPPC-00058.6/2026). Comprueba el estado del trámite y sus instrucciones antes de presentar tu escrito.</p>
 </div></section>
 </main>
 
@@ -1448,38 +1246,6 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
 })();
 </script>
 <script src="/folio/assets/js/main.js"></script>
-<script>
-/* V1.1: evita convocatorias y plazos vencidos; zona horaria Madrid */
-(function(){
- function localDay(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
- var day=localDay();
- var banner=document.querySelector('.event-marquee');
- if(banner)banner.hidden=document.documentElement.getAttribute('data-event-active')!=='true';
- var sticker=document.querySelector('.hero-deadline-sticker');
- if(sticker&&day>'2026-11-25')sticker.hidden=true;
- var status=document.querySelector('.info-fact-status');
- if(day>'2026-11-25'){
-   document.querySelectorAll('a[href="#participa"].btn-primary').forEach(function(a){a.innerHTML='Consultar estado del proyecto &rarr;'});
-   var register=document.querySelector('.allegations-guide-actions .btn-primary');if(register){register.href='https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s';register.textContent='Consultar expediente actualizado ↗';}
-   if(status){var p=status.querySelector('.info-fact-kicker');var v=status.querySelector('strong');var d=status.querySelector(':scope > span:last-child');if(p)p.textContent='¿Qué pasa tras el plazo?';if(v)v.textContent='Plazo finalizado';if(d)d.textContent='El periodo de información pública terminó el 25 de noviembre de 2026. Consulta el expediente para conocer su estado actualizado.';}
-   document.querySelectorAll('.participa-heading > p:last-child').forEach(function(p){p.innerHTML='El plazo de información pública anunciado para este expediente finalizó el <strong>25 de noviembre de 2026</strong>. Consulta su estado actual en la Comunidad de Madrid.'});
-   var guide=document.getElementById('guia-alegaciones');if(guide){var h=guide.querySelector('.allegations-guide-head > p:last-child');if(h)h.textContent='Esta guía describe el trámite de alegaciones que finalizó el 25 de noviembre de 2026. Antes de actuar, consulta si hay nuevos procedimientos abiertos.';}
- }
-})();
-</script>
-<script>
-/* Solo la primera vista móvil muestra el evento como pie de pantalla.
-   Al desplazarse, el banner sigue en el documento, sin tapar el contenido. */
-(function(){
-  var scrolled=false;
-  function sync(){
-    var next=window.scrollY>24;
-    if(next!==scrolled){scrolled=next;document.documentElement.classList.toggle('event-mobile-scrolled',next);}
-  }
-  window.addEventListener('scroll',sync,{passive:true});
-  window.addEventListener('pageshow',sync);
-  sync();
-})();
-</script>
+<script src="/assets/campaign.js"></script>
 </body>
 </html>
