@@ -1113,6 +1113,27 @@ html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alega
   .hero-main-actions .btn-primary {padding-inline:1.9rem;}
 }
 </style>
+<script>
+/* INTERRUPTOR DEL BANNER: cambia enabled a true/false y actualiza endDate al crear una convocatoria. */
+window.EVENT_BANNER_CONFIG = { enabled: false, endDate: '2026-11-14' };
+(function () {
+  var cfg = window.EVENT_BANNER_CONFIG;
+  var today = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  var active = cfg.enabled && (!cfg.endDate || today <= cfg.endDate);
+  document.documentElement.setAttribute('data-event-active', active ? 'true' : 'false');
+})();
+</script>
+<style>
+/* Solo escritorio: sin convocatoria se elimina el espacio reservado al banner. */
+@media (min-width: 768px) {
+  html[data-event-active="false"] #main > section:first-child {
+    min-height: 0;
+    padding-top: clamp(7rem, 10vw, 10rem);
+    padding-bottom: 4rem;
+  }
+}
+html[data-event-active="false"] .event-marquee { display:none!important; }
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -1211,7 +1232,7 @@ html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alega
  function localDay(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
  var day=localDay();
  var banner=document.querySelector('.event-marquee');
- if(banner&&day>'2026-11-14')banner.hidden=true;
+ if(banner)banner.hidden=document.documentElement.getAttribute('data-event-active')!=='true';
  var sticker=document.querySelector('.hero-deadline-sticker');
  if(sticker&&day>'2026-11-25')sticker.hidden=true;
  var status=document.querySelector('.info-fact-status');
