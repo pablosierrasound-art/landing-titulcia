@@ -1340,12 +1340,19 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
 </style>
 
 <style>
-/* Corrección puntual desktop: el collage no sobresale del borde derecho. */
+/* Escritorio: suavizar el borde derecho del collage para que nunca acabe
+   en un corte vertical dentro del fondo de la portada. */
 @media (min-width: 768px) {
-  #main > section:first-child { overflow-x: clip !important; }
+  #main > section:first-child {
+    overflow-x: clip !important;
+  }
   #main > section:first-child .hero-collage-image {
     right: 0 !important;
     max-width: 100% !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
   }
 }
 </style>
