@@ -1220,152 +1220,104 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
 }
 </style>
 
+
+
+
+
+
+
 <style>
-/* Banner activo: portada compacta sin romper la composición ni ocultar botones. */
+/* SISTEMA DE PORTADA Y EVENTO — único bloque de reglas de estado.
+   El banner permanece en el flujo; el hero reserva su altura sin superposiciones. */
 @media (min-width: 768px) {
  html[data-event-active="true"] #main > section:first-child {
-   min-height:0!important;height:auto!important;justify-content:flex-start!important;
-   padding-top:clamp(6.5rem,10vh,8rem)!important;
-   padding-bottom:clamp(1.25rem,2.5vh,2rem)!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content h1 {
-   margin-top:1.25rem!important;
-   font-size:clamp(3.4rem,6.8vw,7.4rem)!important;
-   line-height:.95!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .hero-socials {margin:1rem 0 0!important;}
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
-   margin-top:1.5rem!important;padding-top:1.2rem!important;
-   display:grid!important;grid-template-columns:minmax(0,7fr) minmax(0,5fr)!important;
-   gap:2rem!important;align-items:center!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 > p {
-   grid-column:1!important;min-width:0!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions {
-   grid-column:2!important;display:flex!important;flex-wrap:wrap!important;
-   justify-content:flex-end!important;align-items:center!important;
-   gap:.75rem!important;position:relative!important;z-index:3!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn {
-   display:inline-flex!important;visibility:visible!important;opacity:1!important;
-   min-height:3.2rem!important;padding:.85rem 1.3rem!important;
-   font-size:1rem!important;white-space:nowrap!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-collage-image {
-   background-size:contain!important;background-position:right center!important;
-   height:calc(100% - 5rem)!important;top:5rem!important;
- }
- html[data-event-active="true"] .event-marquee-top,
- html[data-event-active="true"] .event-marquee-bottom {padding-top:.55rem;padding-bottom:.55rem;}
- html[data-event-active="true"] .event-marquee-viewport {padding:.45rem 0 .55rem;}
- html[data-event-active="true"] .event-marquee-unit {font-size:clamp(2rem,4.5vw,4.25rem);}
-}
-@media (min-width:768px) and (max-height:800px) {
- html[data-event-active="true"] #main > section:first-child {padding-top:5.5rem!important;padding-bottom:.85rem!important;}
- html[data-event-active="true"] #main > section:first-child .hero-content h1 {font-size:clamp(3.1rem,5.9vw,6.4rem)!important;margin-top:.7rem!important;}
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {margin-top:.8rem!important;padding-top:.8rem!important;}
- html[data-event-active="true"] .event-marquee-unit {font-size:clamp(1.8rem,4vw,3.5rem);}
-}
-@media (min-width:768px) and (max-width:1050px) {
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {grid-template-columns:1fr!important;gap:1rem!important;}
- html[data-event-active="true"] #main > section:first-child .hero-main-actions {grid-column:1!important;justify-content:flex-start!important;}
-}
-</style>
-
-<style>
-/* Corrección de portada con convocatoria: CTA legibles y collage fuera de la zona de lectura. */
-@media (min-width: 1051px) {
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
-   grid-template-columns:repeat(12,minmax(0,1fr))!important;
-   gap:1.5rem!important;align-items:center!important;
-   position:relative!important;z-index:2!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 > p {
-   grid-column:1 / span 6!important;
-   position:relative!important;z-index:2!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions {
-   grid-column:8 / span 5!important;
-   justify-content:flex-end!important;align-self:center!important;
-   position:relative!important;z-index:4!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
-   color:var(--color-ink)!important;background:var(--color-bg)!important;
-   border:1px solid var(--color-line)!important;
-   opacity:1!important;visibility:visible!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-primary {
-   background:var(--color-accent)!important;color:#fff!important;
- }
- html[data-event-active="true"] #main > section:first-child .hero-collage-image::after {
-   background:linear-gradient(90deg,var(--color-bg) 0%,transparent 50%),linear-gradient(0deg,var(--color-bg) 0%,transparent 34%)!important;
- }
-}
-@media (min-width:768px) and (max-width:1050px) {
- html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
-   color:var(--color-ink)!important;background:var(--color-bg)!important;border:1px solid var(--color-line)!important;
- }
-}
-</style>
-
-<style>
-/* Layout definitivo del switch en escritorio: banner al pie de la primera pantalla.
-   La zona de acciones tiene fondo propio: nunca se superpone visualmente al collage. */
-@media (min-width: 1051px) {
- html[data-event-active="true"] #main > section:first-child {
    box-sizing:border-box!important;
-   min-height:max(0px,calc(100svh - 145px))!important;
    height:auto!important;
-   padding-top:5.5rem!important;
-   padding-bottom:1.25rem!important;
+   min-height:calc(100svh - 140px)!important;
+   display:flex!important;
+   flex-direction:column!important;
    justify-content:center!important;
+   padding-top:clamp(5.5rem,8vh,7rem)!important;
+   padding-bottom:clamp(1rem,2vh,1.5rem)!important;
  }
+ html[data-event-active="true"] #main > section:first-child .hero-content {width:100%;isolation:isolate;}
+ html[data-event-active="true"] #main > section:first-child .hero-content h1 {
+   font-size:clamp(3.4rem,min(6.4vw,11vh),7rem)!important;
+   line-height:.94!important;
+   margin-top:clamp(.75rem,1.5vh,1.25rem)!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-content > .hero-socials {
+   margin-top:clamp(.6rem,1.4vh,1rem)!important;
+ }
+ /* La ilustración termina ANTES del pie de texto y botones. */
+ html[data-event-active="true"] #main > section:first-child .hero-collage-image {
+   top:clamp(5.5rem,8vh,7rem)!important;
+   bottom:clamp(8.75rem,17vh,11rem)!important;
+   height:auto!important;
+   width:min(67vw,1000px)!important;
+   right:0!important;
+   background-size:contain!important;
+   background-position:right center!important;
+ }
+ /* Franja de información independiente de la imagen, sin trucos de z-index. */
  html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
-   position:relative!important;
-   isolation:isolate!important;
-   margin-top:1.2rem!important;
-   padding:1.1rem 0 .25rem!important;
-   border-top:1px solid var(--color-line)!important;
    display:grid!important;
    grid-template-columns:minmax(0,7fr) minmax(0,5fr)!important;
-   gap:2rem!important;
    align-items:center!important;
+   gap:clamp(1rem,3vw,3rem)!important;
+   margin-top:clamp(1rem,2.5vh,1.65rem)!important;
+   padding:clamp(1rem,2vh,1.4rem) 0 0!important;
+   position:relative!important;
+   background:var(--color-bg)!important;
+   isolation:isolate!important;
  }
  html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14::before {
-   content:'';position:absolute;z-index:-1;
-   inset:-.15rem -1.5rem -1.25rem;
-   background:var(--color-bg);opacity:.98;
+   content:'';position:absolute;inset:-.1rem -2rem -2rem;
+   background:var(--color-bg);z-index:-1;pointer-events:none;
  }
  html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 > p {
    grid-column:1!important;margin:0!important;max-width:100%!important;
  }
  html[data-event-active="true"] #main > section:first-child .hero-main-actions {
-   grid-column:2!important;display:flex!important;
+   grid-column:2!important;display:flex!important;flex-wrap:wrap!important;
    justify-content:flex-end!important;align-items:center!important;
-   flex-wrap:wrap!important;gap:.85rem!important;
+   gap:.75rem!important;position:relative!important;
  }
  html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn {
-   flex:none!important;min-height:3.4rem!important;
-   font-size:1.02rem!important;padding:.9rem 1.4rem!important;
+   display:inline-flex!important;opacity:1!important;visibility:visible!important;
+   flex:none!important;min-height:3.2rem!important;padding:.8rem 1.25rem!important;
+   white-space:nowrap!important;
  }
  html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
    background:var(--color-bg)!important;color:var(--color-ink)!important;
    border:1px solid var(--color-line)!important;
  }
- html[data-event-active="true"] #main > section:first-child .hero-collage-image {
-   height:calc(100% - 6rem)!important;top:6rem!important;
-   background-size:contain!important;background-position:right top!important;
+ html[data-event-active="true"] .event-marquee-top,
+ html[data-event-active="true"] .event-marquee-bottom {padding-top:.5rem!important;padding-bottom:.5rem!important;}
+ html[data-event-active="true"] .event-marquee-viewport {padding:.4rem 0 .5rem!important;}
+ html[data-event-active="true"] .event-marquee-unit {font-size:clamp(2rem,4vw,3.7rem)!important;}
+}
+@media (min-width:768px) and (max-width:1100px) {
+ html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
+   grid-template-columns:minmax(0,1fr)!important;gap:.8rem!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-main-actions {
+   grid-column:1!important;justify-content:flex-start!important;
  }
 }
-@media (min-width:1051px) and (max-height:760px) {
+@media (min-width:768px) and (max-height:740px) {
  html[data-event-active="true"] #main > section:first-child {
-   min-height:0!important;justify-content:flex-start!important;
-   padding-top:5rem!important;padding-bottom:1rem!important;
+   min-height:0!important;padding-top:5rem!important;padding-bottom:.75rem!important;
  }
  html[data-event-active="true"] #main > section:first-child .hero-content h1 {
-   font-size:clamp(3rem,5.4vw,5.7rem)!important;
+   font-size:clamp(2.8rem,min(5.5vw,9vh),5.5rem)!important;
  }
+ html[data-event-active="true"] #main > section:first-child .hero-collage-image {
+   top:5rem!important;bottom:9rem!important;
+ }
+}
+@media (prefers-reduced-motion:reduce) {
+ .event-marquee-track {animation:none!important;}
 }
 </style>
 </head>
