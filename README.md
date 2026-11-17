@@ -27,10 +27,10 @@ noviembre de 2026 para que se pueda revisar la convocatoria aunque ya haya caduc
 ## Dónde editar
 
 - [index.html](index.html) contiene el texto, los enlaces y los estilos base de la portada.
-- [assets/campaign.css](assets/campaign.css) contiene los ajustes de la portada, el banner y los colores de las tarjetas.
+- [assets/campaign-v2.css](assets/campaign-v2.css) contiene los ajustes de la portada, el banner y los colores de las tarjetas.
 - [assets/campaign-dates.js](assets/campaign-dates.js) aplica las fechas en horario de Madrid.
   Para cambiar la convocatoria, actualiza `data-event-until` en la etiqueta `html` y edita el bloque
-  `campaign-event` con la fecha visible, el lugar y el enlace al mapa. El aviso se oculta al acabar
+  `event-marquee` con la fecha visible, el lugar y el enlace al mapa. El aviso se oculta al acabar
   el día indicado. Para desactivarlo manualmente, quita `data-event-until`.
 - El plazo de alegaciones se controla con `data-allegations-until`. Si cambia, actualiza también
   las fechas visibles del aviso, la tarjeta de estado, la pregunta frecuente y la sección Participa.

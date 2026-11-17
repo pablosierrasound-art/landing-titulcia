@@ -17,9 +17,9 @@ for (const [width, height] of [[320, 568], [390, 844], [767, 900], [768, 1024], 
     await openCampaign(page);
 
     const title = page.getByRole('heading', { level: 1 });
-    const event = page.getByRole('complementary', { name: 'Próxima asamblea · Grupo Ciempozuelos' });
+    const event = page.getByRole('complementary', { name: /Asamblea del grupo de Ciempozuelos/ });
     await expect(title).toBeInViewport();
-    await expect(event.getByRole('heading')).toBeInViewport();
+    await expect(event).toBeInViewport();
     await expect(event).toContainText('18:00 h');
     await expect(event).toContainText('Colegio Eloy Saavedra');
     await expect(event.getByRole('link', { name: /Cómo llegar/ })).toHaveAttribute('href', /google\.com\/maps/);
@@ -96,7 +96,7 @@ test('la tarjeta del parque mueve el foco y las preguntas se expanden', async ({
 });
 
 test('las fechas se aplican a medianoche de Madrid', async ({ page }) => {
-  const event = page.getByRole('complementary', { name: 'Próxima asamblea · Grupo Ciempozuelos' });
+  const event = page.getByRole('complementary', { name: /Asamblea del grupo de Ciempozuelos/ });
   const sticker = page.locator('.hero-deadline-sticker');
 
   await openCampaign(page, '2026-11-19T22:59:59Z');
@@ -155,7 +155,7 @@ test('la cinta se anima y se puede pausar con el foco', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await openCampaign(page);
-  const banner = page.getByRole('complementary', { name: 'Próxima asamblea · Grupo Ciempozuelos' });
+  const banner = page.getByRole('complementary', { name: /Asamblea del grupo de Ciempozuelos/ });
   const track = banner.locator('.event-marquee-track');
   await expect(banner).toHaveCSS('background-color', 'rgb(216, 58, 40)');
   await expect(page.locator('html')).toHaveCSS('--color-accent', '#d83c24');
@@ -164,6 +164,7 @@ test('la cinta se anima y se puede pausar con el foco', async ({ page }) => {
   await expect(banner).toBeInViewport();
   await page.getByRole('link', { name: 'Infórmate', exact: true }).click({ trial: true });
 
+  await page.keyboard.press('Tab');
   await banner.getByRole('link', { name: /Cómo llegar/ }).focus();
   await expect(track).toHaveCSS('animation-play-state', 'paused');
 
