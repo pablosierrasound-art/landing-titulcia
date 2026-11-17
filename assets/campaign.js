@@ -42,4 +42,26 @@
       shareStatus.textContent = 'Puedes copiar el enlace seleccionado.';
     }
   });
+
+  // Ajusta el pie de la portada a la altura real de la convocatoria.
+  // No interviene en el scroll ni cambia la posición del banner.
+  const banner = document.querySelector('#main > .event-marquee');
+  if (banner && root.dataset.eventActive === 'true') {
+    const measureBanner = () => {
+      const styles = getComputedStyle(banner);
+      if (styles.display === 'none') return;
+      const footprint = Math.ceil(
+        banner.getBoundingClientRect().height +
+        (parseFloat(styles.marginTop) || 0) +
+        (parseFloat(styles.marginBottom) || 0)
+      );
+      if (footprint > 0) root.style.setProperty('--campaign-banner-footprint', `${footprint}px`);
+    };
+    measureBanner();
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(measureBanner).observe(banner);
+    }
+    window.addEventListener('resize', measureBanner, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureBanner);
+  }
 })();
