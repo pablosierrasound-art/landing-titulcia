@@ -1094,6 +1094,16 @@ z-index:4!important;
 .event-marquee[data-event-enabled="false"]{display:none!important}
 </style>
 
+
+<style>
+/* Acceso a modelos: integrado en la tarjeta, sin alterar el resto de la página. */
+.participa-option-featured .alegaciones-cta-group{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-top:1.15rem}
+.participa-option-featured .alegaciones-cta-group .alegaciones-modelos-link{background:transparent!important;color:#1e7650!important;border-color:#1e7650!important}
+.participa-option-featured .alegaciones-cta-group .alegaciones-modelos-link:hover{background:rgba(30,118,80,.09)!important}
+.participa-option-featured .alegaciones-modelos-aviso{margin:1rem 0 0!important;padding-left:.85rem;border-left:3px solid #237b55;font-size:.93rem!important;line-height:1.55!important;max-width:42rem!important}
+html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alegaciones-modelos-link{color:#b9e2c8!important;border-color:#87c6a0!important}
+@media(max-width:767px){.participa-option-featured .alegaciones-cta-group{align-items:flex-start;flex-direction:column}.participa-option-featured .alegaciones-modelos-aviso{font-size:.87rem!important}}
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -1143,7 +1153,7 @@ z-index:4!important;
 <div class="participa-heading reveal"><p class="eyebrow">03 / Participa</p><h2 id="participa-title">Tu voz puede <em class="section-serif text-accent">contar.</em></h2><p>El proyecto todavía no tiene autorización ambiental definitiva. Hasta el <strong>25 de noviembre de 2026</strong> puedes presentar observaciones y pedir que se estudien los posibles impactos. Aquí te explicamos cómo.</p></div>
 <div class="participa-options">
 <article class="participa-option reveal"><span class="participa-option-number">01</span><div><h3>Consulta el proyecto</h3><p>Consulta la memoria, el estudio de impacto ambiental y los planos oficiales. Expediente: <strong>26-IPPC-00058.6/2026</strong>.</p><a href="https://www.comunidad.madrid/transparencia/solicitud-autorizacion-ambiental-integrada-y-estudio-impacto-ambiental-prezero-gestion-residuos-s" target="_blank" rel="noopener noreferrer">Ver expediente oficial <span aria-hidden="true">↗</span></a></div></article>
-<article class="participa-option participa-option-featured reveal"><span class="participa-option-number">02</span><div><span class="participa-featured-eyebrow"><span class="participa-featured-dot" aria-hidden="true"></span> TU ACCIÓN ES IMPORTANTE</span><h3>Presenta tus alegaciones</h3><p>Expón tus preocupaciones sobre el aire, los camiones, la salud o los espacios naturales. Puedes presentar observaciones por registro electrónico o por las vías presenciales admitidas.</p><a href="#guia-alegaciones">Ver los pasos para alegar <span aria-hidden="true">↓</span></a></div></article>
+<article class="participa-option participa-option-featured reveal"><span class="participa-option-number">02</span><div><span class="participa-featured-eyebrow"><span class="participa-featured-dot" aria-hidden="true"></span> TU ACCIÓN ES IMPORTANTE</span><h3>Presenta tus alegaciones</h3><p>Expón tus preocupaciones sobre el aire, los camiones, la salud o los espacios naturales. Puedes presentar observaciones por registro electrónico o por las vías presenciales admitidas.</p><div class="alegaciones-cta-group"><a href="#guia-alegaciones">Ver los pasos para alegar <span aria-hidden="true">↓</span></a><a class="alegaciones-modelos-link" href="https://drive.google.com/drive/folders/1JJwhkVk-W12nLPTteOXFsIKZ40Q3eUv1?usp=drive_link" target="_blank" rel="noopener noreferrer">Consultar modelos de alegación <span aria-hidden="true">↗</span></a></div><p class="alegaciones-modelos-aviso"><strong>Importante:</strong> Los modelos sirven como punto de partida. No copies el texto literalmente: adapta las alegaciones a tus propias preocupaciones, añade observaciones concretas y revisa el escrito antes de presentarlo. La presentación de textos idénticos no implica por sí sola su archivo automático.</p></div></article>
 <article class="participa-option reveal"><span class="participa-option-number">03</span><div><h3>Comparte la información</h3><p>Comparte información contrastada y el enlace al expediente para que otras personas puedan participar.</p><button class="participa-share" type="button" onclick="if(navigator.share){navigator.share({title:'Defendamos Titulcia',url:location.origin+location.pathname}).catch(()=>{});}else{navigator.clipboard.writeText(location.origin+location.pathname).then(()=>{this.textContent='Enlace copiado ✓'}).catch(()=>{});}">Compartir esta página <span aria-hidden="true">↗</span></button></div></article>
 </div>
 <section id="guia-alegaciones" class="allegations-guide" aria-labelledby="guide-title">
