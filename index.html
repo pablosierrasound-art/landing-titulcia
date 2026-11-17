@@ -1338,6 +1338,17 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
  }
 }
 </style>
+
+<style>
+/* Corrección puntual desktop: el collage no sobresale del borde derecho. */
+@media (min-width: 768px) {
+  #main > section:first-child { overflow-x: clip !important; }
+  #main > section:first-child .hero-collage-image {
+    right: 0 !important;
+    max-width: 100% !important;
+  }
+}
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
