@@ -19,13 +19,16 @@ for (const [width, height] of [[320, 568], [390, 844], [767, 900], [768, 1024], 
     const title = page.getByRole('heading', { level: 1 });
     const event = page.getByRole('complementary', { name: /Asamblea del grupo de Ciempozuelos/ });
     await expect(title).toBeInViewport();
-    await expect(event).toBeInViewport();
+    // En pantallas de poca altura, la convocatoria se alcanza desplazándose.
+    await expect(event).toBeVisible();
+    await expect(event).toHaveCount(1);
     await expect(event).toContainText('18:00 h');
     await expect(event).toContainText('Colegio Eloy Saavedra');
     await expect(event.getByRole('link', { name: /Cómo llegar/ })).toHaveAttribute('href', /google\.com\/maps/);
 
     for (const name of ['Hazte escuchar', 'Infórmate']) {
       const action = page.getByRole('link', { name, exact: name === 'Infórmate' });
+      await action.scrollIntoViewIfNeeded();
       await expect(action).toBeInViewport({ ratio: 0.99 });
       await action.click({ trial: true });
     }
@@ -161,6 +164,7 @@ test('la cinta se anima y se puede pausar con el foco', async ({ page }) => {
   await expect(page.locator('html')).toHaveCSS('--color-accent', '#d83c24');
   await expect(track).toHaveCSS('animation-name', 'eventTicker');
   await expect(track).toHaveCSS('animation-play-state', 'running');
+  await banner.scrollIntoViewIfNeeded();
   await expect(banner).toBeInViewport();
   await page.getByRole('link', { name: 'Infórmate', exact: true }).click({ trial: true });
 
@@ -171,3 +175,44 @@ test('la cinta se anima y se puede pausar con el foco', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(track).toHaveCSS('animation-name', 'none');
 });
+
+// Regresión móvil: banner único, no fijado, y llamadas a la acción apiladas.
+for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 767, height: 900 }]) {
+  test(`banner en flujo y CTA verticales a ${viewport.width}px`, async ({ page }) => {
+    await page.setViewportSize(viewport);
+    await openCampaign(page);
+
+    const event = page.locator('.event-marquee');
+    const hero = page.locator('#main > section.campaign-hero');
+    const actions = page.locator('.hero-main-actions > .btn');
+    await expect(event).toHaveCount(1);
+    await expect(event).toHaveCSS('position', 'static');
+    await expect(actions).toHaveCount(2);
+
+    const boxes = await page.evaluate(() => {
+      const banner = document.querySelector('.event-marquee');
+      const hero = document.querySelector('.campaign-hero');
+      const buttons = [...document.querySelectorAll('.hero-main-actions > .btn')];
+      return {
+        bannerTop: banner.getBoundingClientRect().top,
+        heroBottom: hero.getBoundingClientRect().bottom,
+        buttons: buttons.map(node => {
+          const { top, right, bottom, left } = node.getBoundingClientRect();
+          return { top, right, bottom, left };
+        }),
+      };
+    });
+    expect(boxes.bannerTop).toBeGreaterThanOrEqual(boxes.heroBottom - 2);
+    expect(boxes.buttons[1].top).toBeGreaterThanOrEqual(boxes.buttons[0].bottom - 1);
+    expect(Math.abs(boxes.buttons[1].left - boxes.buttons[0].left)).toBeLessThan(2);
+    expect(Math.abs(boxes.buttons[1].right - boxes.buttons[0].right)).toBeLessThan(2);
+
+    // El banner se marcha por arriba al hacer scroll; nunca queda pegado a pantalla.
+    await page.evaluate(() => {
+      const rect = document.querySelector('.event-marquee').getBoundingClientRect();
+      window.scrollTo({ top: window.scrollY + rect.bottom + 120, behavior: 'instant' });
+    });
+    await expect.poll(() => event.evaluate(el => el.getBoundingClientRect().bottom)).toBeLessThan(0);
+    await expect(event).toHaveCSS('position', 'static');
+  });
+}
