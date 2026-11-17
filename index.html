@@ -1238,13 +1238,25 @@ html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alega
 <script src="/folio/assets/js/main.js"></script>
 <script src="/assets/campaign.js"></script>
 <script>
-/* Solo la primera vista móvil muestra el evento como pie de pantalla.
-   Al desplazarse, el banner sigue en el documento, sin tapar el contenido. */
+/* El evento original no cambia nunca de posición. La copia fija solo sirve de
+   anticipo en la primera pantalla móvil, sin provocar saltos de layout. */
 (function(){
+  var banner=document.querySelector('.event-marquee[data-event-enabled="true"]');
+  if(!banner)return;
+  var copy=banner.cloneNode(true);
+  copy.classList.add('event-marquee-mobile-overlay');
+  copy.setAttribute('aria-hidden','true');
+  copy.removeAttribute('aria-label');
+  copy.querySelectorAll('[id]').forEach(function(el){el.removeAttribute('id');});
+  copy.querySelectorAll('a,button,[tabindex]').forEach(function(el){el.setAttribute('tabindex','-1');});
+  banner.after(copy);
   var scrolled=false;
   function sync(){
     var next=window.scrollY>24;
-    if(next!==scrolled){scrolled=next;document.documentElement.classList.toggle('event-mobile-scrolled',next);}
+    if(next!==scrolled){
+      scrolled=next;
+      document.documentElement.classList.toggle('event-mobile-scrolled',next);
+    }
   }
   window.addEventListener('scroll',sync,{passive:true});
   window.addEventListener('pageshow',sync);
