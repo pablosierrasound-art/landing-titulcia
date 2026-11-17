@@ -16,21 +16,36 @@
   var toggle = document.querySelector('.menu-toggle');
   var menu = document.getElementById('mobile-menu');
   if (toggle && menu) {
+    var background = document.querySelectorAll('main, footer');
     var setMenu = function (open) {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', open
+        ? toggle.dataset.labelClose || 'Close menu'
+        : toggle.dataset.labelOpen || 'Open menu');
       document.body.style.overflow = open ? 'hidden' : '';
+      background.forEach(function (element) { element.inert = open; });
       if (open) {
         menu.hidden = false;
-        requestAnimationFrame(function () { menu.classList.add('is-open'); });
-        var first = menu.querySelector('a');
-        if (first) first.focus();
+        menu.inert = false;
+        requestAnimationFrame(function () {
+          if (toggle.getAttribute('aria-expanded') !== 'true') return;
+          menu.classList.add('is-open');
+          var first = menu.querySelector('a');
+          if (first) first.focus();
+        });
       } else {
+        menu.inert = true;
         menu.classList.remove('is-open');
         setTimeout(function () { if (toggle.getAttribute('aria-expanded') === 'false') menu.hidden = true; }, 350);
       }
     };
-    menu.querySelectorAll('a[href^="#"]').forEach(function (link) { link.addEventListener('click', function () { setMenu(false); }); });
+    menu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setMenu(false);
+        var target = document.getElementById(link.hash.slice(1));
+        if (target && target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
+      });
+    });
     toggle.addEventListener('click', function () {
       setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });

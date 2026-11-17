@@ -1,0 +1,267 @@
+/* Solo escritorio: sin convocatoria se elimina el espacio reservado al banner. */
+@media (min-width: 768px) {
+  html[data-event-active="false"] #main > section.campaign-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    padding-top: clamp(6.25rem, 7.5vw, 7.5rem) !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Refinamiento editorial de portada en escritorio: ritmo vertical y balance visual. */
+@media (min-width: 1101px) {
+  #main > section.campaign-hero .hero-content h1 {margin-top:1.35rem!important;}
+  #main > section.campaign-hero .hero-content > .hero-socials {margin-top:1.15rem!important;}
+  #main > section.campaign-hero .hero-content > .hero-summary {
+    margin-top:clamp(1.45rem,2.4vw,2.3rem)!important;
+    padding-top:clamp(1.2rem,1.8vw,1.65rem)!important;
+    align-items:center!important;
+  }
+  #main > section.campaign-hero .hero-content > .hero-summary > p {line-height:1.6!important;}
+  #main > section.campaign-hero .hero-main-actions {align-self:center!important;}
+  #main > section.campaign-hero .hero-main-actions .btn {min-height:3.65rem!important;}
+  html[data-event-active="false"] #main > section.campaign-hero {
+    padding-top:clamp(6.25rem,7vw,7rem)!important;
+    padding-bottom:clamp(2rem,3.2vw,3rem)!important;
+  }
+}
+
+/* Composición de la portada de escritorio cuando hay convocatoria. */
+@media (min-width: 768px) {
+ html[data-event-active="true"] #main > section.campaign-hero {
+   box-sizing:border-box!important;
+   height:auto!important;
+   min-height:calc(100svh - 132px)!important;
+   display:flex!important;
+   flex-direction:column!important;
+   justify-content:center!important;
+   padding-top:clamp(5.5rem,8vh,7rem)!important;
+   padding-bottom:clamp(1rem,2vh,1.5rem)!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content {width:100%;isolation:isolate;}
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content h1 {
+   font-size:clamp(3.4rem,min(6.4vw,11vh),7rem)!important;
+   line-height:.94!important;
+   margin-top:clamp(.75rem,1.5vh,1.25rem)!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content > .hero-socials {
+   margin-top:clamp(.6rem,1.4vh,1rem)!important;
+ }
+ /* La ilustración termina ANTES del pie de texto y botones. */
+ html[data-event-active="true"] #main > section.campaign-hero .hero-collage-image {
+   top:clamp(5.5rem,8vh,7rem)!important;
+   bottom:clamp(8.75rem,17vh,11rem)!important;
+   height:auto!important;
+   width:min(67vw,1000px)!important;
+   right:0!important;
+   background-size:contain!important;
+   background-position:right center!important;
+ }
+ /* Franja de información independiente de la imagen, sin trucos de z-index. */
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content > .hero-summary {
+   display:grid!important;
+   grid-template-columns:minmax(0,7fr) minmax(0,5fr)!important;
+   align-items:center!important;
+   gap:clamp(1rem,3vw,3rem)!important;
+   margin-top:clamp(1rem,2.5vh,1.65rem)!important;
+   padding:clamp(1rem,2vh,1.4rem) 0 0!important;
+   position:relative!important;
+   background:var(--color-bg)!important;
+   isolation:isolate!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content > .hero-summary::before {
+   content:'';position:absolute;inset:-.1rem -2rem -2rem;
+   background:var(--color-bg);z-index:-1;pointer-events:none;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content > .hero-summary > p {
+   grid-column:1!important;margin:0!important;max-width:100%!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-main-actions {
+   grid-column:2!important;display:flex!important;flex-wrap:wrap!important;
+   justify-content:flex-end!important;align-items:center!important;
+   gap:.75rem!important;position:relative!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-main-actions .btn {
+   display:inline-flex!important;opacity:1!important;visibility:visible!important;
+   flex:none!important;min-height:3.2rem!important;padding:.8rem 1.25rem!important;
+   white-space:nowrap!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-main-actions .btn-outline {
+   background:var(--color-bg)!important;color:var(--color-ink)!important;
+   border:1px solid var(--color-line)!important;
+ }
+
+}
+@media (min-width:768px) and (max-width:1100px) {
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content > .hero-summary {
+   grid-template-columns:minmax(0,1fr)!important;gap:.8rem!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-main-actions {
+   grid-column:1!important;justify-content:flex-start!important;
+ }
+}
+@media (min-width:768px) and (max-height:740px) {
+ html[data-event-active="true"] #main > section.campaign-hero {
+   min-height:0!important;padding-top:5rem!important;padding-bottom:.75rem!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-content h1 {
+   font-size:clamp(2.8rem,min(5.5vw,9vh),5.5rem)!important;
+ }
+ html[data-event-active="true"] #main > section.campaign-hero .hero-collage-image {
+   top:5rem!important;bottom:9rem!important;
+ }
+}
+
+/* Escritorio: suavizar el borde derecho del collage para que nunca acabe
+   en un corte vertical dentro del fondo de la portada. */
+@media (min-width: 768px) {
+  #main > section.campaign-hero {
+    overflow-x: clip !important;
+  }
+  #main > section.campaign-hero .hero-collage-image {
+    right: 0 !important;
+    max-width: 100% !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 82%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+/* Convocatoria y estado del plazo. Los avisos ocupan su sitio en el flujo. */
+html:not([data-event-until]) .campaign-event,
+html[data-event-active="false"] .campaign-event,
+html[data-allegations-closed="true"] [data-allegations-only] {
+  display: none !important;
+}
+
+.campaign-event {
+  background: #bb301e;
+  color: #fff;
+}
+.campaign-event-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .2rem .75rem;
+  padding-block: .75rem;
+}
+.campaign-event h2 {
+  grid-column: 1 / -1;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.6vw, 1.75rem);
+  line-height: 1.15;
+}
+.campaign-event p {
+  font-size: .875rem;
+  margin-top: .15rem;
+}
+.campaign-event-purpose {
+  font-size: .8rem;
+}
+.campaign-event a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  min-height: 44px;
+  padding: .25rem .75rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9rem;
+}
+.campaign-event a:hover,
+.campaign-event a:focus-visible {
+  background: #fff;
+  color: #9b291a;
+}
+
+/* La portada móvil crece con el contenido y permite agrupar los dos accesos. */
+@media (max-width: 767px) {
+  #main > section.campaign-hero .hero-content > div.hero-summary {
+    margin-top: .65rem !important;
+    padding-top: .65rem !important;
+    gap: .65rem !important;
+  }
+  #main > section.campaign-hero .hero-content > div.hero-summary > p {
+    font-size: clamp(.95rem, 3.8vw, 1.08rem) !important;
+    line-height: 1.45 !important;
+  }
+  #main > section.campaign-hero .hero-content > div.hero-summary > .hero-main-actions {
+    flex-flow: row wrap !important;
+    gap: .5rem !important;
+  }
+  #main > section.campaign-hero .hero-content > div.hero-summary .hero-main-actions > .btn {
+    min-height: 44px !important;
+    padding: .65rem .8rem !important;
+    white-space: normal !important;
+  }
+  html[data-allegations-closed="true"] #main > section.campaign-hero .hero-content h1 {
+    margin-top: 1.3rem !important;
+  }
+  .campaign-event-inner { padding-block: .65rem; }
+  .campaign-event-purpose { display: none; }
+}
+
+@media (max-width: 400px) {
+  #main > section.campaign-hero .hero-content h1 {
+    margin-top: 3.55rem !important;
+  }
+  .campaign-event p { font-size: .8rem; }
+  .campaign-event a { padding-inline: .5rem; font-size: .8rem; }
+}
+
+/* Colores de texto semánticos para que las tarjetas funcionen en ambos temas. */
+html {
+  --campaign-status: #146443;
+}
+html[data-theme="dark"] {
+  --campaign-status: #9adaba;
+}
+.info-story .info-facts .info-fact > strong {
+  color: var(--color-ink);
+}
+.info-story .info-facts .info-fact > span:last-child {
+  color: var(--color-muted);
+}
+.info-story .info-facts .info-fact .info-fact-index,
+.info-story .info-facts .info-fact .info-fact-kicker {
+  color: var(--color-muted) !important;
+}
+.info-story .info-facts .info-fact:first-child > .info-fact-kicker {
+  color: var(--color-accent) !important;
+}
+.info-story .info-facts .info-fact-status :is(.info-fact-index, .info-fact-kicker),
+.info-story .info-facts .info-fact-status > strong {
+  color: var(--campaign-status) !important;
+}
+.participa-option-featured .participa-featured-eyebrow,
+.participa-option-featured .participa-option-number {
+  color: var(--campaign-status) !important;
+}
+.hero-content .hero-deadline-sticker .sticker-message strong {
+  color: #af2c1c !important;
+}
+
+#informacion, #impacto, #participa {
+  scroll-margin-top: 80px;
+}
+.skip-link { z-index: 10000; }
+#share-status:empty { display: none; }
+#share-url {
+  width: min(100%, 30rem);
+  padding: .5rem;
+  border: 1px solid var(--color-line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* La cabecera deja espacio al nombre de la campaña en tablet. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-header nav ul { gap: 1rem; }
+  .site-header .nav-link-participa { display: none; }
+  .site-header .header-title-line { white-space: normal; }
+}
