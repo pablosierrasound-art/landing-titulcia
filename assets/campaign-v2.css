@@ -172,16 +172,18 @@ html[data-allegations-closed="true"] [data-allegations-only] {
   transform: none !important;
 }
 @media (max-width:767px) {
-  html[data-event-active="true"] .event-marquee {
+  html[data-event-active="true"] #main > .event-marquee {
     width:100%!important;
     box-shadow:none!important;
-    margin-top:1.5rem!important; /* Respiración entre botones y convocatoria */
+    margin-top:.75rem!important; /* Separación moderada con los CTA */
   }
-  /* No reservar espacio para una versión flotante inexistente. */
-  #main > section.campaign-hero {
+  /* Portada con altura flexible: el banner funciona como pie de la primera
+     pantalla cuando hay espacio, pero sigue en el flujo al hacer scroll.
+     Su altura real se mide una sola vez y al cambiar el tamaño. */
+  html[data-event-active="true"] #main > section.campaign-hero {
     height:auto!important;
-    min-height:0!important;
-    padding-bottom:clamp(1.25rem,3.5vh,2.15rem)!important;
+    min-height:max(0px,calc(100svh - var(--campaign-banner-footprint, 7rem)))!important;
+    padding-bottom:clamp(.75rem,1.7vh,1.1rem)!important;
   }
   html[data-event-active="true"] .event-marquee-top {
     padding:.45rem 1rem!important;font-size:.62rem!important;gap:.5rem!important;
