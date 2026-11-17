@@ -1272,6 +1272,42 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
  html[data-event-active="true"] #main > section:first-child .hero-main-actions {grid-column:1!important;justify-content:flex-start!important;}
 }
 </style>
+
+<style>
+/* Corrección de portada con convocatoria: CTA legibles y collage fuera de la zona de lectura. */
+@media (min-width: 1051px) {
+ html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 {
+   grid-template-columns:repeat(12,minmax(0,1fr))!important;
+   gap:1.5rem!important;align-items:center!important;
+   position:relative!important;z-index:2!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-content > .mt-14 > p {
+   grid-column:1 / span 6!important;
+   position:relative!important;z-index:2!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-main-actions {
+   grid-column:8 / span 5!important;
+   justify-content:flex-end!important;align-self:center!important;
+   position:relative!important;z-index:4!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
+   color:var(--color-ink)!important;background:var(--color-bg)!important;
+   border:1px solid var(--color-line)!important;
+   opacity:1!important;visibility:visible!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-primary {
+   background:var(--color-accent)!important;color:#fff!important;
+ }
+ html[data-event-active="true"] #main > section:first-child .hero-collage-image::after {
+   background:linear-gradient(90deg,var(--color-bg) 0%,transparent 50%),linear-gradient(0deg,var(--color-bg) 0%,transparent 34%)!important;
+ }
+}
+@media (min-width:768px) and (max-width:1050px) {
+ html[data-event-active="true"] #main > section:first-child .hero-main-actions .btn-outline {
+   color:var(--color-ink)!important;background:var(--color-bg)!important;border:1px solid var(--color-line)!important;
+ }
+}
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
