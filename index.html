@@ -30,7 +30,7 @@
   <script src="/assets/campaign-dates.js"></script>
 <style>
 /* Colores exclusivos de la home. Día es el modo predeterminado. */
-html:not([data-theme="dark"]) {--color-bg:#f7f6f2;--color-surface:#eeede7;--color-raised:#e5e4dd;--color-line:#d8d6ce;--color-ink:#171817;--color-muted:#656760;--color-accent:#bb301e;color-scheme:light}
+html:not([data-theme="dark"]) {--color-bg:#f7f6f2;--color-surface:#eeede7;--color-raised:#e5e4dd;--color-line:#d8d6ce;--color-ink:#171817;--color-muted:#656760;--color-accent:#d83c24;color-scheme:light}
 html[data-theme="dark"] {--color-bg:#0b0b0c;--color-surface:#141416;--color-raised:#1c1c1f;--color-line:#27272b;--color-ink:#f3f0e9;--color-muted:#a29e96;--color-accent:#ff5b2e;color-scheme:dark}
 html,body,.site-header,.mobile-menu {transition:background-color .35s ease,color .35s ease,border-color .35s ease}
 .theme-switch {display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-width:44px;min-height:44px;padding:.45rem .75rem;border:1px solid var(--color-line);border-radius:999px;color:var(--color-ink);background:var(--color-surface);cursor:pointer;font-size:.85rem;font-weight:600}
@@ -1153,14 +1153,22 @@ html[data-theme="dark"] .participa-option-featured .alegaciones-cta-group .alega
   <div class="hero-summary mt-14 grid gap-10 border-t border-line pt-8 md:grid-cols-12 md:items-end reveal" style="--d:300ms"><p class="text-lg leading-relaxed text-muted md:col-span-6 md:text-xl"><strong class="text-accent">PreZero</strong> proyecta una planta que quemaría residuos para generar electricidad, cerca de Titulcia y de espacios naturales protegidos.</p>
     <div class="hero-main-actions flex flex-wrap gap-3 md:col-span-5 md:col-start-8 md:justify-end"><a href="#participa" class="btn btn-primary">Hazte escuchar &rarr;</a><a href="#informacion" class="btn btn-outline">Infórmate</a></div></div></section>
 <aside class="campaign-event" aria-labelledby="event-title">
-  <div class="campaign-event-inner container-x">
-    <h2 id="event-title">Asamblea en Ciempozuelos</h2>
-    <div>
-      <p><time datetime="2026-11-19T18:00:00+01:00">Jueves 19 de noviembre · 18:00 h</time></p>
-      <p>Colegio Eloy Saavedra, C/ Timanfaya, 1</p>
-      <p class="campaign-event-purpose">Trabajo en la localidad, calendario y suma de iniciativas.</p>
+  <div class="event-marquee-top">
+    <h2 id="event-title" class="event-marquee-live">
+      <span class="event-marquee-dot" aria-hidden="true"></span>
+      Próxima asamblea · Grupo Ciempozuelos
+    </h2>
+    <a class="event-marquee-more" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Eloy%20Saavedra%2C%20Calle%20Timanfaya%201%2C%20Ciempozuelos%2C%20Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar · Google Maps <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="event-marquee-viewport" aria-hidden="true">
+    <div class="event-marquee-track">
+      <span class="event-marquee-unit">19 NOVIEMBRE <i>·</i> 18:00 H <i>·</i> CIEMPOZUELOS <i>↗</i></span>
+      <span class="event-marquee-unit">19 NOVIEMBRE <i>·</i> 18:00 H <i>·</i> CIEMPOZUELOS <i>↗</i></span>
     </div>
-    <a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Eloy%20Saavedra%2C%20Calle%20Timanfaya%201%2C%20Ciempozuelos%2C%20Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  <div class="event-marquee-bottom">
+    <p>Asamblea · <time datetime="2026-11-19T18:00:00+01:00">Jueves 19 de noviembre, 18:00 h</time> · Colegio Eloy Saavedra, C/ Timanfaya, 1</p>
+    <p>Objetivo: trabajo en la localidad, calendario y suma de iniciativas</p>
   </div>
 </aside>
 <section tabindex="-1" id="informacion" class="info-story" aria-labelledby="info-title">
