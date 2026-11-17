@@ -216,3 +216,43 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
     await expect(event).toHaveCSS('position', 'static');
   });
 }
+
+test('la convocatoria forma el pie de la portada en móviles altos sin ser sticky', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openCampaign(page);
+  const banner = page.locator('#main > .event-marquee');
+  const hero = page.locator('#main > section.campaign-hero');
+
+  await expect(banner).toHaveCount(1);
+  await expect(banner).toHaveCSS('position', 'static');
+  await expect.poll(() => page.evaluate(() => {
+    const el = document.querySelector('#main > .event-marquee');
+    const rect = el.getBoundingClientRect();
+    return Math.abs(rect.bottom - window.innerHeight);
+  })).toBeLessThan(4);
+
+  const distance = await page.evaluate(() => {
+    const banner = document.querySelector('#main > .event-marquee');
+    const hero = document.querySelector('#main > section.campaign-hero');
+    return banner.getBoundingClientRect().top - hero.getBoundingClientRect().bottom;
+  });
+  expect(distance).toBeGreaterThan(0);
+  expect(distance).toBeLessThan(25);
+
+  await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }));
+  await expect.poll(() => banner.evaluate(el => el.getBoundingClientRect().top)).toBeLessThan(500);
+  await expect(hero).toBeVisible();
+});
+
+test('portada y convocatoria sin solaparse en pantalla baja', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  await openCampaign(page);
+  const bounds = await page.evaluate(() => ({
+    heroBottom: document.querySelector('#main > .campaign-hero').getBoundingClientRect().bottom,
+    bannerTop: document.querySelector('#main > .event-marquee').getBoundingClientRect().top,
+    buttonBottom: document.querySelector('.hero-main-actions').getBoundingClientRect().bottom
+  }));
+  expect(bounds.bannerTop).toBeGreaterThan(bounds.heroBottom);
+  expect(bounds.bannerTop).toBeGreaterThan(bounds.buttonBottom);
+  await expect(page.locator('#main > .event-marquee')).toHaveCSS('position', 'static');
+});
