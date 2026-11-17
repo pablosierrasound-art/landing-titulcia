@@ -1127,9 +1127,11 @@ window.EVENT_BANNER_CONFIG = { enabled: false, endDate: '2026-11-14' };
 /* Solo escritorio: sin convocatoria se elimina el espacio reservado al banner. */
 @media (min-width: 768px) {
   html[data-event-active="false"] #main > section:first-child {
-    min-height: 0;
-    padding-top: clamp(7rem, 10vw, 10rem);
-    padding-bottom: 4rem;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    padding-top: clamp(6.25rem, 7.5vw, 7.5rem) !important;
+    padding-bottom: 3rem !important;
   }
 }
 html[data-event-active="false"] .event-marquee { display:none!important; }
