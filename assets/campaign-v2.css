@@ -173,7 +173,9 @@ html[data-allegations-closed="true"] [data-allegations-only] {
 }
 @media (max-width:767px) {
   html[data-event-active="true"] .event-marquee {
-    width:100%!important;box-shadow:none!important;
+    width:100%!important;
+    box-shadow:none!important;
+    margin-top:1.5rem!important; /* Respiración entre botones y convocatoria */
   }
   /* No reservar espacio para una versión flotante inexistente. */
   #main > section.campaign-hero {
