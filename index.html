@@ -1178,6 +1178,27 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
   .info-story .info-fact-nature .nature-flip-front {padding:1.4rem 1.5rem 4.2rem!important;}
 }
 </style>
+
+<style>
+/* Ajustes específicos de iPhone/Safari: sin alterar escritorio ni tablet. */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 767px) {
+    html, body { -webkit-text-size-adjust:100%; overflow-x:clip; }
+    #main, #main > section:first-child { min-width:0; max-width:100%; }
+    #main > section:first-child { height:auto!important; min-height:0!important; justify-content:flex-start!important; padding-bottom:1.5rem!important; }
+    #main > section:first-child .hero-content {min-width:0; width:100%;}
+    #main > section:first-child .hero-content h1 {max-width:100%; margin-top:clamp(2.5rem,10vw,3.7rem)!important;}
+    #main > section:first-child .hero-content h1 .reveal-line {max-width:100%;}
+    #main > section:first-child .hero-content > .hero-socials {margin:.8rem 0 .65rem!important;}
+    #main > section:first-child .hero-content > .mt-14 {margin-top:.6rem!important; padding-top:1rem!important;}
+    #main > section:first-child .hero-main-actions .btn {max-width:100%; min-height:44px!important;}
+    .hero-socials-links a {width:44px;height:44px;}
+    .event-marquee, .event-marquee-link, .event-marquee-viewport {max-width:100%;overflow:hidden;}
+    .event-marquee-track {will-change:transform;}
+    .info-story .info-facts, .info-story .info-fact {min-width:0;}
+  }
+}
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
