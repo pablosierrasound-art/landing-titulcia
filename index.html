@@ -1320,6 +1320,24 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
  .event-marquee-track {animation:none!important;}
 }
 </style>
+
+<style>
+/* Banner en portada móvil: visible al abrir, sin quedar fijo durante la navegación.
+   Al iniciar el desplazamiento vuelve a su posición natural tras la portada. */
+@media(max-width:767px){
+ html[data-event-active="true"]:not(.event-mobile-scrolled) .event-marquee[data-event-enabled="true"]{
+   display:block!important;position:fixed!important;inset:auto 0 0!important;
+   width:100%!important;z-index:70!important;box-shadow:0 -8px 28px rgba(0,0,0,.12)!important;
+ }
+ html[data-event-active="true"] .event-marquee-top{padding:.45rem 1rem!important;font-size:.62rem!important;gap:.5rem!important;}
+ html[data-event-active="true"] .event-marquee-viewport{padding:.35rem 0!important;}
+ html[data-event-active="true"] .event-marquee-unit{font-size:clamp(1.65rem,7vw,2.6rem)!important;}
+ html[data-event-active="true"] .event-marquee-bottom{display:none!important;}
+ html[data-event-active="true"]:not(.event-mobile-scrolled) #main>section:first-child{
+   padding-bottom:clamp(6rem,14vh,8rem)!important;
+ }
+}
+</style>
 </head>
 <body class="min-h-screen bg-bg text-ink antialiased">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -1430,5 +1448,20 @@ html[data-event-active="false"] .event-marquee { display:none!important; }
    var guide=document.getElementById('guia-alegaciones');if(guide){var h=guide.querySelector('.allegations-guide-head > p:last-child');if(h)h.textContent='Esta guía describe el trámite de alegaciones que finalizó el 25 de noviembre de 2026. Antes de actuar, consulta si hay nuevos procedimientos abiertos.';}
  }
 })();
-</script></body>
+</script>
+<script>
+/* Solo la primera vista móvil muestra el evento como pie de pantalla.
+   Al desplazarse, el banner sigue en el documento, sin tapar el contenido. */
+(function(){
+  var scrolled=false;
+  function sync(){
+    var next=window.scrollY>24;
+    if(next!==scrolled){scrolled=next;document.documentElement.classList.toggle('event-mobile-scrolled',next);}
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('pageshow',sync);
+  sync();
+})();
+</script>
+</body>
 </html>
