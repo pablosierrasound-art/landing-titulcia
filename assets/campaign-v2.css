@@ -228,6 +228,7 @@ html[data-event-active="true"] .event-marquee { color: #fff; }
     align-items: flex-start !important;
     justify-content: flex-start !important;
     gap: .7rem !important;
+    margin-top: .75rem !important; /* 12px más de separación respecto al texto */
   }
   #main > section.campaign-hero .hero-content > div.hero-summary .hero-main-actions > .btn {
     display: inline-flex !important;
